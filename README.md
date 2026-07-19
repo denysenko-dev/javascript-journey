@@ -1,8 +1,8 @@
 # javascript-journey
 
-Курс JavaScript24 — frontend for beginner. Розв'язання завдань по спринтах.
+JavaScript24 course — frontend for beginner. Task solutions organized by sprint.
 
-## Структура
+## Structure
 
 ```
 part1/
@@ -11,17 +11,17 @@ part2/
   sprint_01/ ... sprint_24/
 ```
 
-- `part1` — JavaScript24 (part 1), спринти з `sprint_02` (00 і 01 — вступні, без коду).
-- `part2` — JavaScript24 (part 2), спринти з `sprint_01` (00 — вступний, без коду).
-- Назва папки = номер спринту в програмі курсу, README.md всередині містить назву теми.
+- `part1` — JavaScript24 (part 1), sprints starting from `sprint_02` (00 and 01 are intro lessons, no code).
+- `part2` — JavaScript24 (part 2), sprints starting from `sprint_01` (00 is an intro lesson, no code).
+- Folder name = sprint number in the course program; the `README.md` inside each folder states the lesson topic.
 
 ## Git workflow
 
-Для кожного спринту — окрема гілка, після завершення роботи мерджимо в `main`.
+One branch per sprint, merged into `main` once the task is done.
 
 ```
 git checkout -b part1/sprint_02
-# робота над завданням
+# work on the task
 git checkout main
 git merge part1/sprint_02
 ```
