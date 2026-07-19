@@ -1,1 +1,1 @@
-# Sprint 15 — Події у JS. Події: copy, cut, paste, focus, contextmenu та інші. AddEvent, RemoveEvent
+# Sprint 15 — Events in JS. Events: copy, cut, paste, focus, contextmenu, and others. AddEvent, RemoveEvent

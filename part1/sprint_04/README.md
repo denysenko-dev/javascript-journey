@@ -1,1 +1,1 @@
-# Sprint 04 — Процедури та події у JavaScript. Прив'язка подій до функцій
+# Sprint 04 — Procedures and events in JavaScript. Binding events to functions

@@ -1,1 +1,1 @@
-# Sprint 06 — Проект: TicTacToe. Модель та візуалізація
+# Sprint 06 — Project: TicTacToe. Model and visualization

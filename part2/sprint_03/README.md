@@ -1,1 +1,1 @@
-# Sprint 03 — Алгоритми пошуку за масивами
+# Sprint 03 — Array search algorithms

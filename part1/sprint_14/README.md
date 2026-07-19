@@ -1,1 +1,1 @@
-# Sprint 14 — Стрілочні функції: синтаксис, this, оптимізація, плюси та мінуси
+# Sprint 14 — Arrow functions: syntax, this, optimization, pros and cons

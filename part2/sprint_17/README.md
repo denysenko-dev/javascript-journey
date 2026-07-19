@@ -1,1 +1,1 @@
-# Sprint 17 — JSON як структура даних. Операції з JSON
+# Sprint 17 — JSON as a data structure. Operations with JSON

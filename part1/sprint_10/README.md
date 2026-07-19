@@ -1,1 +1,1 @@
-# Sprint 10 — Робота з атрибутами JavaScript
+# Sprint 10 — Working with attributes in JavaScript

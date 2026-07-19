@@ -1,1 +1,1 @@
-# Sprint 13 — setInterval, setTimeout - відкладений запуск коду JavaScript
+# Sprint 13 — setInterval, setTimeout - delayed code execution in JavaScript

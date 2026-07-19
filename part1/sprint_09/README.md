@@ -1,1 +1,1 @@
-# Sprint 09 — Цикл while, do while
+# Sprint 09 — while, do-while loop

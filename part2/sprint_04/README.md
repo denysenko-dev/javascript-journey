@@ -1,1 +1,1 @@
-# Sprint 04 — Вкладені цикли
+# Sprint 04 — Nested loops

@@ -1,1 +1,1 @@
-# Sprint 08 — Набори даних - Set
+# Sprint 08 — Data sets - Set

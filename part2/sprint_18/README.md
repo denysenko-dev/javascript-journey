@@ -1,1 +1,1 @@
-# Sprint 18 — AJAX Fetch. Працюємо з API
+# Sprint 18 — AJAX Fetch. Working with an API

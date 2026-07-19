@@ -1,1 +1,1 @@
-# Sprint 19 — AXIOS для запитів. Робота із сторонніми пакетами
+# Sprint 19 — AXIOS for requests. Working with third-party packages

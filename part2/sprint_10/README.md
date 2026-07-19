@@ -1,1 +1,1 @@
-# Sprint 10 — Рядки та робота з ними. Операції з пошуку у рядках, трансформації рядків
+# Sprint 10 — Strings and working with them. String search operations, string transformations

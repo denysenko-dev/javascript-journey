@@ -1,1 +1,1 @@
-# Sprint 16 — Робота з AJAX. Види запитів: POST, GET, PUT, DELETE. Робота з API
+# Sprint 16 — Working with AJAX. Request types: POST, GET, PUT, DELETE. Working with an API

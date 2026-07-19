@@ -1,1 +1,1 @@
-# Sprint 11 — Об'єкти. Властивості та методи. This в Об'єктах. Контекст
+# Sprint 11 — Objects. Properties and methods. This in objects. Context

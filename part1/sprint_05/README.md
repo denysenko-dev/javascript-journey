@@ -1,1 +1,1 @@
-# Sprint 05 — Робота з input, select, textarea, checkbox JavaScript
+# Sprint 05 — Working with input, select, textarea, checkbox in JavaScript

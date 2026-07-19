@@ -1,1 +1,1 @@
-# Sprint 13 — Функції, анонімні функції, аргументи, значення, що повертаються
+# Sprint 13 — Functions, anonymous functions, arguments, return values

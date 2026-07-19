@@ -1,1 +1,1 @@
-# Sprint 12 — Створення елементів JavaScript
+# Sprint 12 — Creating elements in JavaScript

@@ -1,1 +1,1 @@
-# Sprint 05 — Двовимірні та багатовимірні масиви, застосування масивів для реалізації двовимірних ігор
+# Sprint 05 — Two-dimensional and multidimensional arrays, using arrays to implement 2D games

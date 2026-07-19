@@ -1,1 +1,1 @@
-# Sprint 02 — Виведення інформації JavaScript на сторінку. Методи innerHTML, textContent
+# Sprint 02 — Displaying information on the page in JavaScript. innerHTML, textContent methods

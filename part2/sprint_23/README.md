@@ -1,1 +1,1 @@
-# Sprint 23 — Unit тестування - реальне застосування в реальному оточенні. Частина друга
+# Sprint 23 — Unit testing - real-world application. Part two

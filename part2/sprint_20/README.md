@@ -1,1 +1,1 @@
-# Sprint 20 — Проміси, ланцюжки промісів, черги. Працюємо з API
+# Sprint 20 — Promises, promise chains, queues. Working with an API

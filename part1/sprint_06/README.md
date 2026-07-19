@@ -1,1 +1,1 @@
-# Sprint 06 — Розгалуження у програмі. Оператори if, else if, else. Switch - case
+# Sprint 06 — Branching in a program. if, else if, else operators. Switch-case

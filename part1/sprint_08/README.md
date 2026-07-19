@@ -1,1 +1,1 @@
-# Sprint 08 — Цикл for - повторення дій у програмі
+# Sprint 08 — for loop - repeating actions in a program

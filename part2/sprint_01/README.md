@@ -1,1 +1,1 @@
-# Sprint 01 — Масиви, операції з масивами, базові методи. Особливості виведення. Баги
+# Sprint 01 — Arrays, array operations, basic methods. Output quirks. Bugs

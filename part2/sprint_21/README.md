@@ -1,1 +1,1 @@
-# Sprint 21 — Mocha, Chai – написання тестів для JS. Тестуємо у браузері
+# Sprint 21 — Mocha, Chai – writing tests for JS. Testing in the browser

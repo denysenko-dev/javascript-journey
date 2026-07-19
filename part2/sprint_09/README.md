@@ -1,1 +1,1 @@
-# Sprint 09 — Сховище даних Map
+# Sprint 09 — Map data storage

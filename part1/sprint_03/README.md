@@ -1,1 +1,1 @@
-# Sprint 03 — Змінні та константи в JavaScript
+# Sprint 03 — Variables and constants in JavaScript

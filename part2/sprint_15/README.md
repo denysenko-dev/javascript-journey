@@ -1,1 +1,1 @@
-# Sprint 15 — Сховища даних JavaScript. LocalStorage. Події - оновлення LS
+# Sprint 15 — JavaScript data storage. LocalStorage. Events - LS updates

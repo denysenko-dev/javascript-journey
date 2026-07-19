@@ -1,1 +1,1 @@
-# Sprint 12 — Об'єкт Date JavaScript. Робота з датою, трансформація даних у датах
+# Sprint 12 — The Date object in JavaScript. Working with dates, transforming date data

@@ -1,1 +1,1 @@
-# Sprint 02 — Методи масивів: isArray, indexOf, at, includes, map, filter, split
+# Sprint 02 — Array methods: isArray, indexOf, at, includes, map, filter, split

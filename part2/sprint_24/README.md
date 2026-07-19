@@ -1,1 +1,1 @@
-# Sprint 24 — TicTacToe - моделюємо через двомірний масив
+# Sprint 24 — TicTacToe - modeling with a two-dimensional array

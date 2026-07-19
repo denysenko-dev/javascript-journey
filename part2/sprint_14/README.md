@@ -1,1 +1,1 @@
-# Sprint 14 — Події клавіатури. Проект - гра для розвитку пам'яті на JavaScript
+# Sprint 14 — Keyboard events. Project - a memory game in JavaScript

@@ -1,1 +1,1 @@
-# Sprint 11 — Робота класами CSS
+# Sprint 11 — Working with CSS classes
