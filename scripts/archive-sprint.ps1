@@ -28,6 +28,18 @@ if (Test-Path $zipPath) {
     Remove-Item $zipPath -Force
 }
 
-Compress-Archive -Path $fullSprintPath -DestinationPath $zipPath
+$tempRoot = Join-Path ([System.IO.Path]::GetTempPath()) ([guid]::NewGuid())
+$tempSprintPath = Join-Path $tempRoot $sprintName
+New-Item -ItemType Directory -Force -Path $tempRoot | Out-Null
+Copy-Item -Path $fullSprintPath -Destination $tempSprintPath -Recurse
+
+$readmePath = Join-Path $tempSprintPath "README.md"
+if (Test-Path $readmePath) {
+    Remove-Item $readmePath -Force
+}
+
+Compress-Archive -Path $tempSprintPath -DestinationPath $zipPath
+
+Remove-Item -Path $tempRoot -Recurse -Force
 
 Write-Host "Created: $zipPath"
