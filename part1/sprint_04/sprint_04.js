@@ -1,8 +1,10 @@
 // Task 1
 // Создана функция t01. Функция запускается при нажатии .b-1. Допишите внутрь функции код, который выводит в .out-1 строку 'hello'.
 
-function t01() {
+let out1 = document.querySelector('.out-1');
 
+function t01() {
+    out1.textContent = 'hello';
 }
 
 document.querySelector('.b-1').onclick = t01;
@@ -19,16 +21,20 @@ function t02() {
     count++;
 }
 
+document.querySelector('.b-2').onclick = t02;
 
 // Task 3
 // Напишите код, который добавляет запуск функции t02 при клике на кнопку .b-3. Реализуйте через свойство кнопки onclick.
 
+document.querySelector('.b-3').onclick = t02;
 
 // Task 4
 // Создана функция t04, напишите в ней код, который получает ЧИСЛО из .out-4, умножает его на 2 и записывает обратно в .out-4.
 
-function t04() {
+let out4 = document.querySelector('.out-4');
 
+function t04() {
+    out4.textContent *= 2;
 }
 
 document.querySelector('.b-4').onclick = t04;
@@ -39,7 +45,9 @@ document.querySelector('.b-4').onclick = t04;
 
 function t05() {
     let g5 = 33;
-    // код напишите тут
+    let out5 = document.querySelector('.out-5');
+
+    out5.textContent = g5;
 }
 
 document.querySelector('.b-5').onclick = t05;
@@ -51,7 +59,9 @@ document.querySelector('.b-5').onclick = t05;
 let g6 = 55;
 
 function t06() {
-    // код напишите тут
+    let out6 = document.querySelector('.out-6');
+
+    out6.textContent = g6;
 }
 
 document.querySelector('.b-6').onclick = t06;
@@ -64,7 +74,9 @@ let g7 = 77;
 
 function t07() {
     let g7 = 88;
-    // код напишите тут
+    let out7 = document.querySelector('.out-7');
+
+    out7.textContent = g7;
 }
 
 document.querySelector('.b-7').onclick = t07;
@@ -76,7 +88,9 @@ let g8 = 99;
 
 function t08() {
     g8 = 100;
-    // код напишите тут
+    let out8 = document.querySelector('.out-8');
+
+    out8.textContent = g8;
 }
 
 document.querySelector('.b-8').onclick = t08;
@@ -96,7 +110,7 @@ document.querySelector('.b-9').onclick = t09;
 
 function t10() {
     document.querySelector('.out-10').innerHTML += 'function 10 work<br>';
-    // document.querySelector('.b-10').onclick = null;
+    document.querySelector('.b-10').onclick = null;
 }
 
 document.querySelector('.b-10').onclick = t10;
