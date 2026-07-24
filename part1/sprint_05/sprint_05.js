@@ -2,10 +2,7 @@
 // Создана функция t01. Функция запускается при нажатии .b-1. Напишите код внутри функции, который читает строку из .i-1 и выводит в .out-1.
 
 function t01() {
-    const i1 = document.querySelector('.i-1').value;
-    const out1 = document.querySelector('.out-1');
-
-    out1.textContent = i1;
+    document.querySelector('.out-1').textContent = document.querySelector('.i-1').value;
 }
 
 document.querySelector('.b-1').onclick = t01;
@@ -15,9 +12,7 @@ document.querySelector('.b-1').onclick = t01;
 // Создана функция t02. Функция запускается при нажатии .b-2. Напишите код внутри функции, которая присваивает input.i-2 значение value равное 'one piece'.
 
 function t02() {
-    const i2 = document.querySelector('.i-2');
-
-    i2.value = 'one piece';
+    document.querySelector('.i-2').value = 'one piece';
 }
 
 document.querySelector('.b-2').onclick = t02;
@@ -38,11 +33,7 @@ document.querySelector('.b-3').onclick = t03;
 // Создана функция t04. Функция запускается при нажатии .b-4. Напишите код внутри функции, который считывает числа из input.i-41 и input.i-42 и выводит в .out-4 их сумму.
 
 function t04() {
-    const i41 = Number(document.querySelector('.i-41').value);
-    const i42 = Number(document.querySelector('.i-42').value);
-    const out4 = document.querySelector('.out-4');
-
-    out4.textContent = i41 + i42;
+    document.querySelector('.out-4').textContent = Number(document.querySelector('.i-41').value) + Number(document.querySelector('.i-42').value);
 }
 
 document.querySelector('.b-4').onclick = t04;
@@ -52,10 +43,7 @@ document.querySelector('.b-4').onclick = t04;
 // Создана функция t05. Функция запускается при нажатии .b-5. Напишите код внутри функции, который читает строку из input.i-51 и записывает в input.i-5.
 
 function t05() {
-    const i51 = document.querySelector('.i-51');
-    const i5 = document.querySelector('.i-5');
-
-    i5.value = i51.value;
+    document.querySelector('.i-5').value = document.querySelector('.i-51').value;
 }
 
 document.querySelector('.b-5').onclick = t05;
@@ -64,10 +52,7 @@ document.querySelector('.b-5').onclick = t05;
 // Создана функция t06. Функция запускается при нажатии .b-6. Напишите код внутри функции, который читает строку из input.i-6 и выводит в .out-6.
 
 function t06() {
-    const i6 = document.querySelector('.i-6').value;
-    const out6 = document.querySelector('.out-6');
-
-    out6.textContent = i6;
+    document.querySelector('.out-6').textContent = document.querySelector('.i-6').value;
 }
 
 document.querySelector('.b-6').onclick = t06;
@@ -77,10 +62,7 @@ document.querySelector('.b-6').onclick = t06;
 // Давайте чуть разнообразим наши знания событий и изучим событие input. Событие срабатывает при вводе информации в input. Напишите в функцию t07 код, который получает value из input.i-7 и выводит в .out-7. Для проверки - начните вводить любой текст в input.i-7.
 
 function t07() {
-    const i7 = document.querySelector('.i-7');
-    const out7 = document.querySelector('.out-7');
-
-    out7.textContent = i7.value;
+    document.querySelector('.out-7').textContent = document.querySelector('.i-7').value;
 }
 
 document.querySelector('.i-7').oninput = t07;
@@ -90,12 +72,8 @@ document.querySelector('.i-7').oninput = t07;
 // Создана функция t08. Функция запускается при нажатии .b-8. Напишите код внутри функции, который читает число из input.i-8 и записывает в progress.p-8. Также, число выводится в .out-8.
 
 function t08() {
-    const i8 = document.querySelector('.i-8');
-    const p8 = document.querySelector('.p-8');
-    const out8 = document.querySelector('.out-8');
-
-    p8.value = i8.value;
-    out8.textContent = i8.value;
+    document.querySelector('.p-8').value = document.querySelector('.i-8').value;
+    document.querySelector('.out-8').textContent = document.querySelector('.i-8').value;
 }
 
 document.querySelector('.b-8').onclick = t08;
@@ -104,10 +82,7 @@ document.querySelector('.b-8').onclick = t08;
 // Создана функция t09. Функция запускается при нажатии .b-9. Напишите код внутри функции, который читает цвет из input.i-9 и выводит в .out-9.
 
 function t09() {
-    const i9 = document.querySelector('.i-9');
-    const out9 = document.querySelector('.out-9');
-
-    out9.textContent = i9.value;
+    document.querySelector('.out-9').textContent = document.querySelector('.i-9').value;
 }
 
 document.querySelector('.b-9').onclick = t09;
@@ -117,11 +92,8 @@ document.querySelector('.b-9').onclick = t09;
 // Создана функция t10. Функция запускается при нажатии .b-10. Напишите код внутри функции, который читает цвет из input.i-10 и выводит в .out-10 и окрашивает .out-10 с помощью свойства style.backgroundColor.
 
 function t10() {
-    const i10 = document.querySelector('.i-10').value;
-    const out10 = document.querySelector('.out-10');
-
-    out10.textContent = i10;
-    out10.style.backgroundColor = i10;
+    document.querySelector('.out-10').textContent = document.querySelector('.i-10').value;
+    document.querySelector('.out-10').style.backgroundColor = document.querySelector('.i-10').value;
 }
 
 document.querySelector('.b-10').onclick = t10;
@@ -131,10 +103,7 @@ document.querySelector('.b-10').onclick = t10;
 // Создана функция t11. Функция запускается при нажатии .b-11. Напишите код внутри функции, который читает строку из input.i-11 и присваивает input.i-111.
 
 function t11() {
-    const i11 = document.querySelector('.i-11');
-    const i111 = document.querySelector('.i-111');
-
-    i111.value = i11.value;
+    document.querySelector('.i-111').value = document.querySelector('.i-11').value;
 }
 
 document.querySelector('.b-11').onclick = t11;
@@ -229,11 +198,9 @@ document.querySelector('.b-19').onclick = t19;
 // Task 20
 // Создана функция t20. Функция запускается при клике на кнопку .b-20. Напишите код внутри функции, который проверяет является ли .ch-20 выбранным (checked) и если да, то выводит в .out-20 value элемента .ch-20.
 
-const ch20 = document.querySelector('.ch-20');
-
 function t20() {
-    if (ch20.checked) {
-        document.querySelector('.out-20').textContent = ch20.value;
+    if (document.querySelector('.ch-20').checked) {
+        document.querySelector('.out-20').textContent = document.querySelector('.ch-20').value;
     }
 }
 
