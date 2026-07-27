@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 	<head>
 		<meta charset="utf-8">
@@ -19,7 +19,6 @@
 	</head>
 
 	<body>
-
 		<div class="container">
 			<div class="row">
 				<div class="one-column">
@@ -29,11 +28,62 @@
 
 					<p>Для применения темы "ночь" удалите комментарий с night.css. </p>
 
+					<section>
+						<h3>Калькулятор расхода стяжки пола</h3>
+						<div class="row calculator-row">
+							<div class="six columns">
+								<img id="good-img" src="./images/budmaster.jpg" alt="budmaster" class="good-img">
+							</div>
+							<div class="six columns">
+								<form>
+									<div class="field">
+										<label for="goods">Выберите товар:</label>
+										<select id="goods" class="goods">
+											<option value="budmaster">BudMaster D-10 цементная 25кг</option>
+											<option value="ceresit">Ceresit CN69 самовыравнивающаяся 25кг</option>
+											<option value="polimin">Polimin ТП-25 наливной пол 25кг</option>
+											<option value="siltek">Siltek С-190 наливной пол 25кг</option>
+											<option value="ivsil">Ivsil Nivelan 25кг</option>
+											<option value="bergauf">Bergauf Bodenfest 25кг</option>
+										</select>
+									</div>
 
+									<div class="field">
+										<label for="square">Площадь (метры квадратные):</label>
+										<input id="square" type="number" class="square" value="1" min="1">
+									</div>
+
+									<div class="field">
+										<label for="layer">Толщина слоя (мм):</label>
+										<input id="layer" type="number" class="layer" value="1" min="1" max="100">
+									</div>
+
+									<div class="out">
+										Расход:
+										<span class="consumption"></span>
+									</div>
+
+									<div class="out">
+										Количество мешков:
+										<span class="bags"></span>
+									</div>
+
+									<div class="out">
+										Цена:
+										<span class="price"></span>
+									</div>
+
+									<div class="calc-action">
+										<button type="button" class="button-primary b-1">Расход</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</section>
 				</div>
 			</div>
-
-			<script src="./sprint_07.js"></script>
+		</div>
+		<script src="./sprint_07.js"></script>
 	</body>
 
 </html>
