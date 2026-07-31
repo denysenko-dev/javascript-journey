@@ -2,7 +2,14 @@
 // Создана функция t01. Функция запускается при нажатии .b-1. Напишите код внутри функции, который создает с помощью цикла строку, где шаблон _* повторяется 10 раз. Функция выводит в .out-1 созданную строку. Обращаю внимание - функция должна гарантировать один и тот же результат в не зависимости от количества запусков. Данное требование справедливо для всех функций далее.
 
 function t01() {
+    const out1 = document.querySelector('.out-1');
+    let starString = '';
 
+    for (let i = 0; i < 10; i++) {
+        starString += '_*';
+    }
+
+    out1.textContent = starString;
 }
 
 document.querySelector('.b-1').onclick = t01;
@@ -11,7 +18,15 @@ document.querySelector('.b-1').onclick = t01;
 // Task 2
 // Создана функция t02. Функция запускается при нажатии .b-2. Напишите код внутри функции, который создает с помощью цикла строку, где шаблон _* повторяется число раз указанное в .i-2. Функция выводит в .out-2 созданную строку.
 function t02() {
+    const out2 = document.querySelector('.out-2');
+    const i2 = Number(document.querySelector('.i-2').value);
+    let starString = '';
 
+    for (let i = 0; i < i2; i++) {
+        starString += '_*';
+    }
+
+    out2.textContent = starString;
 }
 
 document.querySelector('.b-2').onclick = t02;
@@ -21,7 +36,15 @@ document.querySelector('.b-2').onclick = t02;
 // Введено число 5, получаем строку 0_1_2_3_4_5_
 
 function t03() {
+    const out3 = document.querySelector('.out-3');
+    const i3 = Number(document.querySelector('.i-3').value);
+    let inputString = '';
 
+    for (let i = 0; i <= i3; i++) {
+        inputString += `${i}_`;
+    }
+
+    out3.textContent = inputString;
 }
 
 document.querySelector('.b-3').onclick = t03;
@@ -32,7 +55,15 @@ document.querySelector('.b-3').onclick = t03;
 // Введено число 5, получаем строку 5_4_3_2_1_0_
 
 function t04() {
+    const out4 = document.querySelector('.out-4');
+    let i4 = Number(document.querySelector('.i-4').value);
+    let inputString = '';
 
+    for (let i = i4; i >= 0; i--) {
+        inputString += `${i}_`;
+    }
+
+    out4.textContent = inputString;
 }
 
 document.querySelector('.b-4').onclick = t04;
@@ -46,6 +77,17 @@ document.querySelector('.b-4').onclick = t04;
 // Строка выводится в .out-5.
 
 function t05() {
+    const out5 = document.querySelector('.out-5');
+    const i5 = Number(document.querySelector('.i-5').value);
+    let inputString = '';
+
+    for (let i = 0; i <= i5; i++) {
+        if (i % 2 === 0) {
+            inputString += `${i}_`;
+        }
+    }
+
+    out5.textContent = inputString;
 }
 
 document.querySelector('.b-5').onclick = t05;
@@ -59,7 +101,15 @@ document.querySelector('.b-5').onclick = t05;
 // Функция выводит строку в .out-6.
 
 function t06() {
+    const out6 = document.querySelector('.out-6');
+    const i6 = Number(document.querySelector('.i-6').value);
+    let inputString = '';
 
+    for (let i = 0; i < i6 + 3; i += 3) {
+        inputString += `${i}_`;
+    }
+
+    out6.textContent = inputString;
 }
 
 document.querySelector('.b-6').onclick = t06;
@@ -70,7 +120,15 @@ document.querySelector('.b-6').onclick = t06;
 // Ожидается строка вида 1_2_3_5_6_7_9_10_11_13_14_15_17_18_19_21_22_23_25_26_27_29_30_
 
 function t07() {
+    const out7 = document.querySelector('.out-7');
+    let inputString = '';
 
+    for (let i = 0; i <= 30; i++) {
+        if (i % 4 === 0) continue
+        inputString += `${i}_`;
+    }
+
+    out7.textContent = inputString;
 }
 
 document.querySelector('.b-7').onclick = t07;
@@ -81,7 +139,14 @@ document.querySelector('.b-7').onclick = t07;
 // Т.е. нужно найти сумму 0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10
 
 function t08() {
+    const out8 = document.querySelector('.out-8');
+    let sum = 0;
 
+    for (let i = 0; i <= 10; i++) {
+        sum += i;
+    }
+
+    out8.textContent = sum;
 }
 
 document.querySelector('.b-8').onclick = t08;
@@ -90,7 +155,15 @@ document.querySelector('.b-8').onclick = t08;
 // Создана функция t09. Функция запускается при нажатии .b-9. Напишите код внутри функции, который считает сумму чисел от 0 до введенного в input.i-9 числа включительно. Выводит сумму в .out-9.
 
 function t09() {
+    const out9 = document.querySelector('.out-9');
+    const i9 = Number(document.querySelector('.i-9').value);
+    let sum = 0;
 
+    for (let i = 0; i <= i9; i++) {
+        sum += i;
+    }
+
+    out9.textContent = sum;
 }
 
 document.querySelector('.b-9').onclick = t09;
@@ -100,8 +173,16 @@ document.querySelector('.b-9').onclick = t09;
 // Создана функция t10. Функция запускается при нажатии .b-10. Напишите код внутри функции, который считает сумму чисел от 0 до введенного в input.i-10 числа включительно. Выводит сумму в .out-10. Если сумма становится больше 50, то цикл останавливается и выводится текущая сумма.
 
 function t10() {
+    const out10 = document.querySelector('.out-10');
+    const i10 = Number(document.querySelector('.i-10').value);
+    let sum = 0;
 
+    for (let i = 0; i <= i10; i++) {
+        sum += i;
+        if (sum > 50) break;
+    }
 
+    out10.textContent = sum;
 }
 
 document.querySelector('.b-10').onclick = t10;
