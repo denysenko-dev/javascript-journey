@@ -56,7 +56,7 @@ document.querySelector('.b-3').onclick = t03;
 
 function t04() {
     const out4 = document.querySelector('.out-4');
-    let i4 = Number(document.querySelector('.i-4').value);
+    const i4 = Number(document.querySelector('.i-4').value);
     let inputString = '';
 
     for (let i = i4; i >= 0; i--) {
@@ -81,10 +81,8 @@ function t05() {
     const i5 = Number(document.querySelector('.i-5').value);
     let inputString = '';
 
-    for (let i = 0; i <= i5; i++) {
-        if (i % 2 === 0) {
-            inputString += `${i}_`;
-        }
+    for (let i = 0; i <= i5; i += 2) {
+        inputString += `${i}_`;
     }
 
     out5.textContent = inputString;
@@ -124,7 +122,7 @@ function t07() {
     let inputString = '';
 
     for (let i = 0; i <= 30; i++) {
-        if (i % 4 === 0) continue
+        if (i % 4 === 0) continue;
         inputString += `${i}_`;
     }
 
@@ -194,7 +192,22 @@ document.querySelector('.b-10').onclick = t10;
 // Например введено 12 и 9 и получаем строку 9_10_11_12_
 
 function t11() {
+    const i111 = Number(document.querySelector('.i-111').value);
+    const i112 = Number(document.querySelector('.i-112').value);
+    const out11 = document.querySelector('.out-11');
+    let inputString = '';
 
+    if (i111 < i112) {
+        for (let i = i111; i <= i112; i++) {
+            inputString += `${i}_`;
+        }
+    } else {
+        for (let i = i112; i <= i111; i++) {
+            inputString += `${i}_`;
+        }
+    }
+
+    out11.textContent = inputString;
 }
 
 document.querySelector('.b-11').onclick = t11;
@@ -203,8 +216,15 @@ document.querySelector('.b-11').onclick = t11;
 // Создана функция t12. Функция запускается при нажатии .b-12. Напишите код внутри функции, который считает произведение чисел от 1 до введенного в input.i-12. Результат выводится в .out-12. 
 
 function t12() {
+    const i12 = Number(document.querySelector('.i-12').value);
+    const out12 = document.querySelector('.out-12');
+    let product = 1;
 
+    for (let i = 1; i <= i12; i++) {
+        product *= i;
+    }
 
+    out12.textContent = product;
 }
 
 document.querySelector('.b-12').onclick = t12;
@@ -228,9 +248,12 @@ document.querySelector('.b-13').onclick = t13;
 // Task 14
 // Создана функция t14. Функция запускается при нажатии .b-14. Напишите код внутри функции, который получает все параграфы .p-14 в NodeList и каждому прописывает фон backgroundColor равный 'lightsalmon'.
 
+const p14 = document.querySelectorAll('.p-14');
 
 function t14() {
-
+    for (let i = 0; i < p14.length; i++) {
+        p14[i].style.backgroundColor = 'lightsalmon';
+    }
 }
 
 document.querySelector('.b-14').onclick = t14;
@@ -239,8 +262,12 @@ document.querySelector('.b-14').onclick = t14;
 // Тask 15
 // Создана функция t15. Функция запускается при нажатии .b-15. Напишите код внутри функции, который получает все div.d-15 в NodeList и четным элементам NodeList присваивает свойство background равное 'paleturquoise'.
 
-function t15() {
+const d15 = document.querySelectorAll('.d-15');
 
+function t15() {
+    for (let i = 0; i < d15.length; i++) {
+        if (i % 2 !== 0) d15[i].style.backgroundColor = 'paleturquoise';
+    }
 }
 
 document.querySelector('.b-15').onclick = t15;
@@ -253,7 +280,14 @@ document.querySelector('.b-15').onclick = t15;
 const spans16 = document.getElementsByClassName('sp-16');
 
 function t16() {
+    const out16 = document.querySelector('.out-16');
+    let sum = 0;
 
+    for (let i = 0; i < spans16.length; i++) {
+        sum += Number(spans16[i].textContent);
+    }
+
+    out16.textContent = sum;
 }
 
 document.querySelector('.b-16').onclick = t16;
@@ -279,8 +313,17 @@ document.querySelector('.b-17').onclick = t17;
 // Task 18
 // Напишите в функции t18 код, который выводит в .out-18 значение value выбранного radiobutton r-18.
 
-function t18() {
+const radio18 = document.getElementsByName('r-18');
 
+function t18() {
+    const out18 = document.querySelector('.out-18');
+
+    for (let i = 0; i < radio18.length; i++) {
+        if (radio18[i].checked) {
+            out18.textContent = radio18[i].value;
+            break;
+        }
+    }
 }
 
 document.querySelector('.b-18').onclick = t18;
@@ -302,7 +345,20 @@ document.querySelector('.b-19').onclick = t19;
 // value равен 300, то в .out-20 вывести строку 'user'
 
 function t20() {
+    const radio20 = document.querySelector('[name="r-20"]:checked').value;
+    const out20 = document.querySelector('.out-20');
 
+    switch (Number(radio20)) {
+        case 100:
+            out20.textContent = 'admin';
+            break;
+        case 200:
+            out20.textContent = 'moderator';
+            break;
+        case 300:
+            out20.textContent = 'user';
+            break;
+    }
 }
 
 document.querySelector('.b-20').onclick = t20;
