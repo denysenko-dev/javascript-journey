@@ -3,7 +3,16 @@
 // т.е. результат _*_*_*_*_*_*_*_*_*_*
 
 function t01() {
+    const out1 = document.querySelector('.out-1');
+    let starString = '';
+    let counter = 0;
 
+    while (counter < 10) {
+        starString += '_*';
+        counter++;
+    }
+
+    out1.innerHTML = starString;
 }
 
 document.querySelector('.b-1').onclick = t01;
@@ -11,8 +20,19 @@ document.querySelector('.b-1').onclick = t01;
 
 // Task 2
 // Создана функция t02. Функция запускается при нажатии .b-2. Напишите код внутри функции, который создает c помощью цикла while строку, где шаблон '_*' повторяется число раз указанное в .input-2. Функция выводит в .out-2 созданную строку.
-function t02() {
 
+function t02() {
+    const out2 = document.querySelector('.out-2');
+    const i2 = Number(document.querySelector('.i-2').value);
+    let starString = '';
+    let counter = 0;
+
+    while (counter < i2) {
+        starString += '_*';
+        counter++;
+    }
+
+    out2.innerHTML = starString;
 }
 
 document.querySelector('.b-2').onclick = t02;
@@ -22,7 +42,17 @@ document.querySelector('.b-2').onclick = t02;
 // Введено число 5, получаем строку 0_1_2_3_4_5_
 
 function t03() {
+    const out3 = document.querySelector('.out-3');
+    const i3 = Number(document.querySelector('.i-3').value);
+    let numbersString = '';
+    let counter = 0;
 
+    while (counter <= i3) {
+        numbersString += `${counter}_`;
+        counter++;
+    }
+
+    out3.innerHTML = numbersString;
 }
 
 document.querySelector('.b-3').onclick = t03;
@@ -33,7 +63,17 @@ document.querySelector('.b-3').onclick = t03;
 // Введено число 5, получаем строку 5_4_3_2_1_0_
 
 function t04() {
+    const out4 = document.querySelector('.out-4');
+    const i4 = Number(document.querySelector('.i-4').value);
+    let numbersString = '';
+    let inputCounter = i4;
 
+    while (inputCounter >= 0) {
+        numbersString += `${inputCounter}_`;
+        inputCounter--;
+    }
+
+    out4.innerHTML = numbersString;
 }
 
 document.querySelector('.b-4').onclick = t04;
@@ -47,6 +87,17 @@ document.querySelector('.b-4').onclick = t04;
 // Строка выводится в .out-5. Для решения используйте цикл while.
 
 function t05() {
+    const out5 = document.querySelector('.out-5');
+    const i5 = Number(document.querySelector('.i-5').value);
+    let numbersString = '';
+    let counter = 0;
+
+    while (counter <= i5) {
+        numbersString += `${counter}_`;
+        counter += 2;
+    }
+
+    out5.innerHTML = numbersString;
 }
 
 document.querySelector('.b-5').onclick = t05;
@@ -56,7 +107,17 @@ document.querySelector('.b-5').onclick = t05;
 // Создана функция t06. Функция запускается при нажатии .b-6. Напишите код внутри функции. Код должен выводить в .out-6 количество чисел, которые делятся на 7 с остатком нуль, в диапазоне от 0 (включительно) до 100 (включительно). Решите задачу циклом while.
 
 function t06() {
+    const out6 = document.querySelector('.out-6');
+    let numbersString = '';
+    let counter = 0;
 
+    while (counter <= 100) {
+        counter++;
+        if (counter % 7 !== 0) continue;
+        numbersString += `${counter}_`;
+    }
+
+    out6.innerHTML = numbersString;
 }
 
 document.querySelector('.b-6').onclick = t06;
@@ -67,7 +128,21 @@ document.querySelector('.b-6').onclick = t06;
 // т.е. выводятся 17_26_ и далее
 
 function t07() {
+    const out7 = document.querySelector('.out-7');
+    let numbersString = '';
+    let counter = 10;
 
+    while (counter < 100) {
+        counter++;
+
+        const tens = Math.floor(counter / 10);
+        const units = counter % 10;
+
+        if (tens + units !== 8) continue;
+        numbersString += `${counter}_`;
+    }
+
+    out7.innerHTML = numbersString;
 }
 
 document.querySelector('.b-7').onclick = t07;
@@ -78,7 +153,17 @@ document.querySelector('.b-7').onclick = t07;
 // Например ввели 3, получаем строку 0_**_1_**_2_**_3_**_
 
 function t08() {
+    const out8 = document.querySelector('.out-8');
+    const i8 = Number(document.querySelector('.i-8').value);
+    let numbersStarsString = '';
+    let counter = 0;
 
+    while (counter <= i8) {
+        numbersStarsString += `${counter}_**_`;
+        counter++;
+    }
+
+    out8.innerHTML = numbersStarsString;
 }
 
 document.querySelector('.b-8').onclick = t08;
@@ -89,7 +174,17 @@ document.querySelector('.b-8').onclick = t08;
 
 
 function t09() {
+    const out9 = document.querySelector('.out-9');
+    const height = Number(document.querySelector('.i-9').value);
+    let brString = '';
+    let counter = 0;
 
+    while (counter < height) {
+        brString += `******<br>`;
+        counter++;
+    }
+
+    out9.innerHTML = brString;
 }
 
 document.querySelector('.b-9').onclick = t09;
@@ -100,8 +195,17 @@ document.querySelector('.b-9').onclick = t09;
 // Например введено число 5, необходимо сформировать строку '0=1-2=3-4=5-'
 
 function t10() {
+    const out10 = document.querySelector('.out-10');
+    const i10 = Number(document.querySelector('.i-10').value);
+    let numbersString = '';
+    let counter = 0;
 
+    while (counter <= i10) {
+        numbersString += counter % 2 === 0 ? `${counter}=` : `${counter}-`;
+        counter++;
+    }
 
+    out10.textContent = numbersString;
 }
 
 document.querySelector('.b-10').onclick = t10;
