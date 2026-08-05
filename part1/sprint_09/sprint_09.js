@@ -12,7 +12,7 @@ function t01() {
         counter++;
     }
 
-    out1.innerHTML = starString;
+    out1.textContent = starString;
 }
 
 document.querySelector('.b-1').onclick = t01;
@@ -32,7 +32,7 @@ function t02() {
         counter++;
     }
 
-    out2.innerHTML = starString;
+    out2.textContent = starString;
 }
 
 document.querySelector('.b-2').onclick = t02;
@@ -52,7 +52,7 @@ function t03() {
         counter++;
     }
 
-    out3.innerHTML = numbersString;
+    out3.textContent = numbersString;
 }
 
 document.querySelector('.b-3').onclick = t03;
@@ -73,7 +73,7 @@ function t04() {
         inputCounter--;
     }
 
-    out4.innerHTML = numbersString;
+    out4.textContent = numbersString;
 }
 
 document.querySelector('.b-4').onclick = t04;
@@ -97,7 +97,7 @@ function t05() {
         counter += 2;
     }
 
-    out5.innerHTML = numbersString;
+    out5.textContent = numbersString;
 }
 
 document.querySelector('.b-5').onclick = t05;
@@ -108,16 +108,17 @@ document.querySelector('.b-5').onclick = t05;
 
 function t06() {
     const out6 = document.querySelector('.out-6');
-    let numbersString = '';
     let counter = 0;
+    let divisionNumbers = 0;
 
     while (counter <= 100) {
+        if (counter % 7 === 0) {
+            divisionNumbers += 1;
+        }
         counter++;
-        if (counter % 7 !== 0) continue;
-        numbersString += `${counter}_`;
     }
 
-    out6.innerHTML = numbersString;
+    out6.textContent = divisionNumbers;
 }
 
 document.querySelector('.b-6').onclick = t06;
@@ -142,7 +143,7 @@ function t07() {
         numbersString += `${counter}_`;
     }
 
-    out7.innerHTML = numbersString;
+    out7.textContent = numbersString;
 }
 
 document.querySelector('.b-7').onclick = t07;
@@ -163,7 +164,7 @@ function t08() {
         counter++;
     }
 
-    out8.innerHTML = numbersStarsString;
+    out8.textContent = numbersStarsString;
 }
 
 document.querySelector('.b-8').onclick = t08;
@@ -215,7 +216,17 @@ document.querySelector('.b-10').onclick = t10;
 // Создана функция t11. Функция запускается при нажатии .b-11. Напишите код, который формирует строку вида 11_21_ до 91_ включительно, с помощью цикла do while. Выведите строку в .out-11.
 
 function t11() {
+    const out11 = document.querySelector('.out-11');
+    let numbersString = '';
+    let counterTens = 1;
+    let counterUnits = 1;
 
+    do {
+        numbersString += `${counterTens}${counterUnits}_`;
+        counterTens++;
+    } while (counterTens <= 9);
+
+    out11.textContent = numbersString;
 }
 
 document.querySelector('.b-11').onclick = t11;
@@ -225,8 +236,16 @@ document.querySelector('.b-11').onclick = t11;
 // Создана функция t12. Функция запускается при нажатии .b-12. Напишите код внутри функции, который формирует строку с 77_74_71_ до 35_. Т.е. от 77 до 35 с шагом 3. Разделитель - подчеркивание. Решите задачу с помощью do while. Строку выведите в .out-12.
 
 function t12() {
+    const out12 = document.querySelector('.out-12');
+    let numbersString = '';
+    let counter = 77;
 
+    do {
+        numbersString += `${counter}_`;
+        counter -= 3;
+    } while (counter >= 35);
 
+    out12.textContent = numbersString;
 }
 
 document.querySelector('.b-12').onclick = t12;
@@ -238,6 +257,17 @@ document.querySelector('.b-12').onclick = t12;
 
 
 function t13() {
+    const out13 = document.querySelector('.out-13');
+    const i13 = document.querySelector('.s-13').value;
+    let numbersString = '';
+    let counter = 0;
+
+    do {
+        numbersString += `${counter}${i13}`;
+        counter++;
+    } while (counter <= 10);
+
+    out13.textContent = numbersString;
 }
 
 document.querySelector('.b-13').onclick = t13;
@@ -246,9 +276,18 @@ document.querySelector('.b-13').onclick = t13;
 // Task 14
 // Создана функция t14. Функция запускается при изменении input.range-14, код в функции должен получать value из input и создавать строку от 0 до полученного числа, шаг 1 и разделитель пробел. Строка должна выводиться в .out-14. Применяйте цикл do while.
 
-
 function t14() {
+    const out14 = document.querySelector('.out-14');
+    const i14 = Number(document.querySelector('.range-14').value);
+    let numbersString = '';
+    let counter = 0;
 
+    do {
+        numbersString += `${counter} `;
+        counter++;
+    } while (counter <= i14);
+
+    out14.textContent = numbersString;
 }
 
 document.querySelector('.range-14').oninput = t14;
@@ -258,7 +297,13 @@ document.querySelector('.range-14').oninput = t14;
 // Создана функция t15. Функция запускается при нажатии .b-15. Напишите код внутри функции, который записывает в каждый div.d-15 число 0 (очищая предыдущее содержимое). Применяйте цикл do while.
 
 function t15() {
+    const d15 = document.querySelectorAll('.d-15');
+    let counter = 0;
 
+    do {
+        d15[counter].textContent = 0;
+        counter++;
+    } while (counter < d15.length);
 }
 
 document.querySelector('.b-15').onclick = t15;
@@ -267,9 +312,14 @@ document.querySelector('.b-15').onclick = t15;
 // Task 16
 // Создана функция t16. Функция запускается при нажатии .b-16. Напишите код внутри функции, который записывает в каждый div.d-16 число (очищая предыдущее содержимое). Применяйте цикл do while. Т.е. в первом div.d-16 выведите  число 1, во второй - число 2 и т.д.
 
-
 function t16() {
+    const d16 = document.querySelectorAll('.d-16');
+    let counter = 0;
 
+    do {
+        d16[counter].textContent = counter + 1;
+        counter++;
+    } while (counter < d16.length);
 }
 
 document.querySelector('.b-16').onclick = t16;
@@ -280,8 +330,21 @@ document.querySelector('.b-16').onclick = t16;
 // т.е. был <div>two</div> после выполнения цикла должно быть <div>2. two</div>
 // т.е. был <div>three</div> после выполнения цикла должно быть <div>3. three</div>
 
+const d17 = document.querySelectorAll('.d-17');
+let hasRun = false;
 
 function t17() {
+    if (hasRun) return;
+    hasRun = true;
+
+    let counter = 0;
+
+    do {
+        const d17Content = d17[counter].textContent;
+        d17[counter].textContent = `${counter + 1}. ${d17Content}`;
+        counter++;
+    }
+    while (counter < d17.length);
 }
 
 document.querySelector('.b-17').onclick = t17;
@@ -291,7 +354,16 @@ document.querySelector('.b-17').onclick = t17;
 // Напишите в функции t18 код, который с помощью цикла do while формирует строку 1 10 2 20 3 30 и так далее до 10 100 . Выведите строку в .out-18.
 
 function t18() {
+    const out18 = document.querySelector('.out-18');
+    let numbersString = '';
+    let counter = 0;
 
+    do {
+        counter++;
+        numbersString += `${counter} ${counter * 10} `;
+    } while (counter < 10);
+
+    out18.textContent = numbersString;
 }
 
 document.querySelector('.b-18').onclick = t18;
@@ -301,7 +373,18 @@ document.querySelector('.b-18').onclick = t18;
 
 
 function t19() {
+    const out19 = document.querySelector('.out-19');
+    let numbersString = '';
+    let counterZero = 0;
+    let counterTen = 10;
 
+    do {
+        numbersString += `${counterZero} ${counterTen} `;
+        counterZero++;
+        counterTen--;
+    } while (counterZero <= 10);
+
+    out19.textContent = numbersString;
 }
 
 document.querySelector('.b-19').onclick = t19;
@@ -310,7 +393,17 @@ document.querySelector('.b-19').onclick = t19;
 // Получите все td с классом .price, c помощью querySelectorAll(). В функции посчитайте сумму товаров в данных ячейках и выведите в ячейку .total. Примените цикл do while.
 
 function t20() {
+    const td20 = document.querySelectorAll('.price');
+    const out20 = document.querySelector('.total');
+    let counter = 0;
+    let sum = 0;
 
+    do {
+        sum += Number(td20[counter].textContent);
+        counter++;
+    } while (counter < td20.length);
+
+    out20.textContent = sum;
 }
 
 document.querySelector('.b-20').onclick = t20;
