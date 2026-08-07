@@ -19,5 +19,6 @@ part2/sprint_01 ... sprint_24   # JavaScript24 part 2
 
 ## Git workflow
 
-- One branch per sprint, merged into `main` when the sprint's task is done: `git checkout -b part1/sprint_02`, work, then merge back to `main`.
+- One branch per sprint: `git checkout -b part1/sprint_02`, work, then the user merges it into `main` themselves when the sprint's task is done.
 - Commit messages follow Conventional Commits (`feat:`, `fix:`, `docs:`, `chore:`, `refactor:`, `style:`, `test:`).
+- Claude Code performs read-only git operations only (`status`, `log`, `diff`, etc.). Merging, pushing, and deleting branches are done by the user, not by Claude.
