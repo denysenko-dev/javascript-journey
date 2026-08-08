@@ -4,7 +4,7 @@
 const out1 = document.querySelector('.out-1');
 
 function t01() {
-    out1.innerHTML = `<h2>Sprint 12</h2>`
+    out1.innerHTML = `<h2>Sprint 12</h2>`;
 }
 
 document.querySelector('.b-1').onclick = t01;
@@ -74,8 +74,10 @@ document.querySelector('.b-5').onclick = t05;
 // Task 6
 // Данная функция автоматически будет срабатывать если таск 5 выполнен корректно.
 
+const out6 = document.querySelector('.out-6');
+
 function t06() {
-    document.querySelector('.out-6').textContent = document.querySelector('.i-5').value;
+    out6.textContent = document.querySelector('.i-5').value;
 }
 
 
@@ -106,12 +108,12 @@ document.querySelector('.b-7').onclick = t07;
 // Функция должна получать текст из input.i-8, создавать элемент li c помощью createElement и записывать в него полученный текст, после чего добавлять в .list-8 через append.
 
 const list8 = document.querySelector('.list-8');
+const i8 = document.querySelector('.i-8');
 
 function t08() {
-    const i8Value = document.querySelector('.i-8').value;
     const li = document.createElement('li');
 
-    li.textContent = i8Value;
+    li.textContent = i8.value;
 
     list8.append(li);
 }
@@ -132,8 +134,6 @@ function t09() {
     summary.textContent = 'close/open';
     details.append(summary);
     details.append(textNode);
-
-    console.log(details)
 
     out9.append(details);
 }
@@ -162,20 +162,23 @@ document.querySelector('.b-10').onclick = t10;
 // Task 11
 // Создан элемент div, функция должна добавить через append div в блок .out-11. Обратите внимание куда добавляется элемент.
 
+const out11 = document.querySelector('.out-11');
 const div = document.createElement('div');
 div.textContent = 'Test div';
 div.classList.add('bg-orange');
 
 function t11() {
+    out11.append(div);
 }
 
 document.querySelector('.b-11').onclick = t11;
 
 
 // Task 12
-// Функция должна добавлять элемент div (созданный в таске 11) с помощью prepend в .out-11. Обратите внимание, куда добавляется элемент. 
+// Функция должна добавлять элемент div (созданный в таске 11) с помощью prepend в .out-11. Обратите внимание, куда добавляется элемент.
 
 function t12() {
+    out11.prepend(div);
 }
 
 document.querySelector('.b-12').onclick = t12;
@@ -185,6 +188,7 @@ document.querySelector('.b-12').onclick = t12;
 // Функция должна добавлять элемент div (созданный в таске 11) с помощью before в .out-11. Обратите внимание, куда добавляется элемент. 
 
 function t13() {
+    out11.before(div);
 }
 
 document.querySelector('.b-13').onclick = t13;
@@ -194,6 +198,7 @@ document.querySelector('.b-13').onclick = t13;
 // Функция должна добавлять элемент div (созданный в таске 11) с помощью after в .out-11. Обратите внимание, куда добавляется элемент. 
 
 function t14() {
+    out11.after(div);
 }
 
 document.querySelector('.b-14').onclick = t14;
@@ -202,7 +207,10 @@ document.querySelector('.b-14').onclick = t14;
 // Task 15
 // Функция должна делать replaceWith для .out-15 заменяя его на div (созданный в таск 11). Обратите внимание, куда добавляется элемент. 
 
+const out15 = document.querySelector('.out-15');
+
 function t15() {
+    out15.replaceWith(div);
 }
 
 document.querySelector('.b-15').onclick = t15;
@@ -211,8 +219,10 @@ document.querySelector('.b-15').onclick = t15;
 // Task 16
 // Функция должна делать remove() для элемента .out-16.
 
-function t16() {
+const out16 = document.querySelector('.out-16');
 
+function t16() {
+    out16.remove();
 }
 
 document.querySelector('.b-16').onclick = t16;
@@ -221,8 +231,10 @@ document.querySelector('.b-16').onclick = t16;
 // Тask 17
 // Как видно createElement очень гибок, а вместе с after, before, append, prepend позволяет очень гибко работать с DOM, однако не стоит списывать innerHTML со счетов. Давайте заменим блок .out-17 строкой '<mark class="m-17">Thufir Hawat</mark>' с помощью outerHTML.
 
-function t17() {
+const out17 = document.querySelector('.out-17');
 
+function t17() {
+    out17.outerHTML = `<mark class="m-17">Thufir Hawat</mark>`;
 }
 
 document.querySelector('.b-17').onclick = t17;
@@ -230,8 +242,10 @@ document.querySelector('.b-17').onclick = t17;
 // Тask 18
 // Функция t18 должна заменять блок .out-18 строкой '<mark class="m-18">Thufir Hawat</mark>' с помощью outerText.
 
-function t18() {
+const out18 = document.querySelector('.out-18');
 
+function t18() {
+    out18.outerText = `<mark class="m-18">Thufir Hawat</mark>`;
 }
 
 document.querySelector('.b-18').onclick = t18;
@@ -240,7 +254,7 @@ document.querySelector('.b-18').onclick = t18;
 // Изучите работу метода insertAdjacentHTML на примере функции t19. Запустите, изучите ее работу с опцией 'beforebegin'. Замените опцию 'beforebegin' на 'afterbegin', 'beforeend', 'afterend'.
 
 function t19() {
-    document.querySelector('.out-19').insertAdjacentHTML('beforebegin', '<mark>TEST</mark>');
+    document.querySelector('.out-19').insertAdjacentHTML('afterend', '<mark>TEST</mark>');
 }
 
 document.querySelector('.b-19').onclick = t19;
@@ -249,7 +263,7 @@ document.querySelector('.b-19').onclick = t19;
 // Изучите работу метода insertAdjacentText на примере функции t20. Запустите, изучите ее работу с опцией 'beforebegin'. Замените опцию 'beforebegin' на 'afterbegin', 'beforeend', 'afterend'.
 
 function t20() {
-    document.querySelector('.out-20').insertAdjacentText('beforebegin', '<mark>TEST</mark>');
+    document.querySelector('.out-20').insertAdjacentText('afterend', '<mark>TEST</mark>');
 }
 
 document.querySelector('.b-20').onclick = t20;
