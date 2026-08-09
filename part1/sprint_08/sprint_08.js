@@ -266,7 +266,7 @@ const d15 = document.querySelectorAll('.d-15');
 
 function t15() {
     for (let i = 0; i < d15.length; i++) {
-        if (i % 2 !== 0) d15[i].style.backgroundColor = 'paleturquoise';
+        if (i % 2 === 0) d15[i].style.backgroundColor = 'paleturquoise';
     }
 }
 
