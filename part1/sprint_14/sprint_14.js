@@ -24,8 +24,6 @@ document.querySelector('.b-2').onclick = () => t02(10, 22);
 // Task 3
 // Перепишите функцию t03 как стрелочную.
 
-const out3 = document.querySelector('.out-3');
-
 const t03 = (a, b) => {
     let c = a.toLowerCase();
     let d = b.toLowerCase();
@@ -115,7 +113,9 @@ document.querySelector('.b-10').onclick = () => t10('.p-10');
 // Task 11
 // Напишите стрелочную функцию t11, которая получает value из input.i-11 и возвращает true если число в input больше нуля и false если равно или меньше.
 
-// тут напишите функцию t11
+const i11 = document.querySelector('.i-11');
+
+const t11 = () => Number(i11.value) > 0;
 
 document.querySelector('.b-11').onclick = () => document.querySelector('.out-11').textContent = t11();
 
@@ -128,8 +128,17 @@ document.querySelector('.b-11').onclick = () => document.querySelector('.out-11'
 // от 51 до 100 возвращает строку 'very hot'
 // все температуры указаны "включительно"
 
-
-// тут напишите функцию t12
+const t12 = (temperature) => {
+    if (temperature >= 0 && temperature <= 20) {
+        return 'cold';
+    } else if (temperature > 20 && temperature <= 35) {
+        return 'normal'
+    } else if (temperature > 35 && temperature <= 50) {
+        return 'hot'
+    } else {
+        return 'very hot'
+    }
+}
 
 document.querySelector('.range-12').oninput = () => {
     const t = +document.querySelector('.range-12').value;
@@ -140,7 +149,7 @@ document.querySelector('.range-12').oninput = () => {
 // Task 13
 // Напишите стрелочную функцию t13, которая получает аргумент - строку и возвращает строку очищенную от пробелов.
 
-// тут напишите функцию t13
+const t13 = string => string.trim();
 
 document.querySelector('.b-13').onclick = () => {
     let str = '  Stormbringer    ';
@@ -151,7 +160,7 @@ document.querySelector('.b-13').onclick = () => {
 // Task 14
 // Напишите стрелочную функцию t14, которая получает аргумент - число и возвращает true если число четное и false в противном случае.
 
-// тут напишите функцию t14
+const t14 = number => number % 2 === 0;
 
 document.querySelector('.b-14').onclick = () => {
     const n = +document.querySelector('.i-14').value;
@@ -162,7 +171,7 @@ document.querySelector('.b-14').onclick = () => {
 // Task 15
 // Напишите стрелочную функцию t15, которая получает аргумент - имя класса и проверяет есть ли такой элемент на странице. Возвращает true если есть и false если нет.
 
-// тут напишите функцию t15
+const t15 = className => Boolean(document.querySelector(className));
 
 document.querySelector('.b-15').onclick = () => {
     document.querySelector('.out-15').textContent = t15('.out-155555555');
@@ -172,7 +181,7 @@ document.querySelector('.b-15').onclick = () => {
 // Task 16
 // Напишите стрелочную функцию t16, которая получает аргумент - строку и возвращает true, если строка содержит символ '@'  и false если не содержит.
 
-// тут напишите функцию t16
+const t16 = string => string.includes('@');
 
 document.querySelector('.b-16').onclick = () => {
     document.querySelector('.out-16').textContent = t16('example@mail.ua');
@@ -182,8 +191,7 @@ document.querySelector('.b-16').onclick = () => {
 // Task 17
 // Напишите стрелочную функцию t17, которая возвращает число, такое, чтобы выражение ниже давало true.
 
-
-// тут пишите стрелочную функцию t17
+const t17 = () => 10;
 
 document.querySelector('.b-17').onclick = () => {
     document.querySelector('.out-17').textContent = (t17() + 5 === 15);
@@ -193,8 +201,7 @@ document.querySelector('.b-17').onclick = () => {
 // Task 18
 // Напишите стрелочную функцию t18, которая возвращает число, такое, чтобы выражение ниже давало true.
 
-
-// тут пишите стрелочную функцию t18
+const t18 = () => 2;
 
 document.querySelector('.b-18').onclick = () => {
     document.querySelector('.out-18').textContent = ((100 - 10 * t18()) / t18()) === 40;
@@ -204,7 +211,7 @@ document.querySelector('.b-18').onclick = () => {
 // Task 19
 // Напишите стрелочную функцию t19, которая возвращает булево значение, такое, чтобы выражение ниже давало true.
 
-// тут пишите стрелочную функцию t19
+const t19 = () => false;
 
 document.querySelector('.b-19').onclick = () => {
     document.querySelector('.out-19').textContent = !t19();
@@ -214,7 +221,7 @@ document.querySelector('.b-19').onclick = () => {
 // Task 20
 // Напишите стрелочную функцию t20, которая возвращает булево значение, такое, чтобы выражение ниже давало true.
 
-// тут пишите стрелочную функцию t20
+const t20 = () => 1;
 
 document.querySelector('.b-20').onclick = () => {
     document.querySelector('.out-20').textContent = (true !== !t20());
