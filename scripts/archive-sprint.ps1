@@ -12,19 +12,22 @@ param(
 $repoRoot = Split-Path -Parent $PSScriptRoot
 $fullSprintPath = Join-Path $repoRoot $SprintPath
 
-if (-not (Test-Path $fullSprintPath -PathType Container)) {
+if (-not (Test-Path $fullSprintPath -PathType Container))
+{
     Write-Error "Sprint folder not found: $fullSprintPath"
     exit 1
 }
 
-if (-not (Test-Path $OutputDir)) {
+if (-not (Test-Path $OutputDir))
+{
     New-Item -ItemType Directory -Force -Path $OutputDir | Out-Null
 }
 
 $sprintName = Split-Path -Leaf $fullSprintPath
 $zipPath = Join-Path $OutputDir "$sprintName.zip"
 
-if (Test-Path $zipPath) {
+if (Test-Path $zipPath)
+{
     Remove-Item $zipPath -Force
 }
 
@@ -34,7 +37,8 @@ New-Item -ItemType Directory -Force -Path $tempRoot | Out-Null
 Copy-Item -Path $fullSprintPath -Destination $tempSprintPath -Recurse
 
 $readmePath = Join-Path $tempSprintPath "README.md"
-if (Test-Path $readmePath) {
+if (Test-Path $readmePath)
+{
     Remove-Item $readmePath -Force
 }
 

@@ -1,7 +1,8 @@
 # Usage: .\scripts\setup-sprint.ps1 part1/sprint_12
-# Finds the course template archive in Downloads (js24_unit_<N>_template.zip,
-# N taken from the sprint number), unpacks it, strips the .vscode folder,
-# and copies the contents into the given sprint folder (keeping README.md).
+# Finds the course template archive in Downloads (js24_unit_<NN>_template.zip
+# for part1, js242_unit_<NN>_template.zip for part2; NN is the zero-padded
+# sprint number), unpacks it, strips the .vscode folder, and copies the
+# contents into the given sprint folder (keeping README.md).
 
 param(
     [Parameter(Mandatory = $true)]
@@ -15,28 +16,46 @@ param(
 $repoRoot = Split-Path -Parent $PSScriptRoot
 $fullSprintPath = Join-Path $repoRoot $SprintPath
 
-if (-not (Test-Path $fullSprintPath -PathType Container)) {
+if (-not (Test-Path $fullSprintPath -PathType Container))
+{
     Write-Error "Sprint folder not found: $fullSprintPath"
     exit 1
 }
 
 $sprintName = Split-Path -Leaf $fullSprintPath
-if ($sprintName -notmatch 'sprint_(\d+)') {
+if ($sprintName -notmatch 'sprint_(\d+)')
+{
     Write-Error "Could not parse sprint number from folder name: $sprintName"
     exit 1
 }
-$unit = [int]$Matches[1]
+$unitPadded = '{0:D2}' -f [int]$Matches[1]
+
+$partName = Split-Path -Leaf (Split-Path -Parent $fullSprintPath)
+$courseCode = switch ($partName)
+{
+    'part1' {
+        'js24'
+    }
+    'part2' {
+        'js242'
+    }
+    default {
+        Write-Error "Unknown part folder: $partName"; exit 1
+    }
+}
 
 $existing = Get-ChildItem -Path $fullSprintPath -Force | Where-Object { $_.Name -ne 'README.md' }
-if ($existing -and -not $Force) {
+if ($existing -and -not $Force)
+{
     Write-Error "Sprint folder already has files beyond README.md. Re-run with -Force to overwrite."
     exit 1
 }
 
-$zipName = "js24_unit_${unit}_template.zip"
+$zipName = "${courseCode}_unit_${unitPadded}_template.zip"
 $zipPath = Join-Path $DownloadsDir $zipName
 
-if (-not (Test-Path $zipPath)) {
+if (-not (Test-Path $zipPath))
+{
     Write-Error "Template archive not found: $zipPath"
     exit 1
 }
@@ -47,14 +66,16 @@ New-Item -ItemType Directory -Force -Path $tempRoot | Out-Null
 Expand-Archive -Path $zipPath -DestinationPath $tempRoot -Force
 
 $extractedRoot = Get-ChildItem -Path $tempRoot -Directory | Select-Object -First 1
-if (-not $extractedRoot) {
+if (-not $extractedRoot)
+{
     Write-Error "Archive did not contain a top-level folder."
     Remove-Item -Path $tempRoot -Recurse -Force
     exit 1
 }
 
 $vscodePath = Join-Path $extractedRoot.FullName ".vscode"
-if (Test-Path $vscodePath) {
+if (Test-Path $vscodePath)
+{
     Remove-Item -Path $vscodePath -Recurse -Force
 }
 
