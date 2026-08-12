@@ -5,23 +5,31 @@
 // Task 01
 // Создайте массив arr_01, который содержит три элемента - число, строку и boolean. Выведите в консоль. 
 
+const arr_01 = [1, 'string', true];
+
+console.log(arr_01);
 
 // Task 02
 // Создайте массив arr_02, который содержит два элемента - true, false. Выведите в консоль. 
 
+const arr_02 = [true, false];
+
+console.log(arr_02);
 
 // Task 03
 // Создайте массив arr_03 содержащий элементы  "Debian", 10, "Buster". Выведите в консоль. 
 
+const arr_03 = ["Debian", 10, "Buster"];
+
+console.log(arr_03);
 
 // Task 04
 // Создан массив arr_04. Напишите функцию t04, которая выводит длину массива в .out-4. 
 
-let arr_04 = ["Linux Mint", 19.1, "Tessa"];
+const arr_04 = ["Linux Mint", 19.1, "Tessa"];
+const out4 = document.querySelector('.out-4');
 
-const t04 = () => {
-
-}
+const t04 = () => out4.textContent = arr_04.length;
 
 document.querySelector('.b-4').addEventListener('click', t04);
 
@@ -29,11 +37,9 @@ document.querySelector('.b-4').addEventListener('click', t04);
 // Task 05
 // Создан массив arr_05. Напишите функцию t05. Функция принимает массив, как аргумент и возвращает его длину. 
 
-let arr_05 = ["elementary", "OS", 5.0, "Hera"];
+const arr_05 = ["elementary", "OS", 5.0, "Hera"];
 
-const t05 = (arr) => {
-
-}
+const t05 = arr => arr.length;
 
 document.querySelector('.b-5').addEventListener('click', () => {
     document.querySelector('.out-5').textContent = t05(arr_05);
@@ -47,7 +53,8 @@ document.querySelector('.b-5').addEventListener('click', () => {
 const arr_06 = [];
 
 const t06 = () => {
-
+    arr_06.push(90, 60);
+    console.log(arr_06);
 }
 
 document.querySelector('.b-6').addEventListener('click', t06);
@@ -59,7 +66,9 @@ document.querySelector('.b-6').addEventListener('click', t06);
 const arr_07 = ["OS", "Windows"];
 
 const t07 = () => {
-
+    arr_07[1] = 'Arch'
+    arr_07[2] = 'Linux'
+    console.log(arr_07);
 }
 
 document.querySelector('.b-7').addEventListener('click', t07);
@@ -71,7 +80,9 @@ document.querySelector('.b-7').addEventListener('click', t07);
 const arr_08 = ["OS", "Windows"];
 
 const t08 = () => {
-
+    arr_08[1] = 'Open';
+    arr_07[20] = 'Linux';
+    console.log(arr_08.length);
 }
 
 document.querySelector('.b-8').addEventListener('click', t08);
@@ -82,9 +93,12 @@ document.querySelector('.b-8').addEventListener('click', t08);
 // Подсказка. Если в консоли много текста, и сложно разобраться, то можно применить console.clear() для очистки консоли. Поставьте в начале функции.
 
 const arr_09 = [1111, 2222];
+const i9 = document.querySelector('.i-9');
 
 const t09 = () => {
-
+    console.clear();
+    arr_09.push(Number(i9.value));
+    console.log(arr_09);
 }
 
 document.querySelector('.b-9').addEventListener('click', t09);
@@ -96,7 +110,8 @@ document.querySelector('.b-9').addEventListener('click', t09);
 const arr_10 = ["CentOS", "Mandriva Linux", "EduLinux", "Fedora", "Mageia"];
 
 const t10 = () => {
-
+    arr_10.pop();
+    console.log(arr_10);
 }
 
 document.querySelector('.b-10').addEventListener('click', t10);
