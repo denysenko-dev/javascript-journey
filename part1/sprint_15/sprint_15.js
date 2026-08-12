@@ -82,7 +82,7 @@ let w = 100;
 const t08 = () => {
     w++;
     div8.style.width = w + 'px';
-}
+};
 
 div8.addEventListener('mousemove', t08);
 
@@ -96,7 +96,7 @@ let angle = 0;
 const t09 = () => {
     angle += 15;
     div9.style.transform = `rotate(${angle}deg)`;
-}
+};
 
 div9.addEventListener('click', t09);
 
@@ -110,7 +110,7 @@ const blockSize = () => {
     let w = div10.offsetWidth;
     w++;
     div10.style.width = w + 'px';
-}
+};
 
 const t10 = () => div10.addEventListener('mousemove', blockSize);
 

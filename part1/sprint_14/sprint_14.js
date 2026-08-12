@@ -8,7 +8,7 @@ const t01 = () => {
     const b = 99;
 
     return out1.textContent = a * b;
-}
+};
 
 document.querySelector('.b-1').onclick = t01;
 
@@ -17,7 +17,7 @@ document.querySelector('.b-1').onclick = t01;
 
 const out2 = document.querySelector('.out-2');
 
-const t02 = (a, b) => out2.textContent = a * b
+const t02 = (a, b) => out2.textContent = a * b;
 
 document.querySelector('.b-2').onclick = () => t02(10, 22);
 
@@ -28,7 +28,7 @@ const t03 = (a, b) => {
     let c = a.toLowerCase();
     let d = b.toLowerCase();
     return (c > d) ? c : d;
-}
+};
 
 document.querySelector('.b-3').onclick = () => document.querySelector('.out-3').textContent = t03('hello', 'Heilo');
 
@@ -72,12 +72,12 @@ const t08 = (url) => {
     const img = document.createElement('img');
     img.src = url;
     return img;
-}
+};
 
 document.querySelector('.b-8').onclick = () => {
     const image = t08('./images/elric.jpg');
     document.querySelector('.out-8').append(image);
-}
+};
 
 
 // Task 9
@@ -89,7 +89,7 @@ const t09 = (list) => {
     for (let i = 0; i < liElements.length; i++) {
         liElements[i].insertAdjacentText('afterbegin', (i + 1) + '. ');
     }
-}
+};
 
 document.querySelector('.b-9').onclick = () => t09('.list-9');
 
@@ -106,7 +106,7 @@ const t10 = (f) => {
         mark.textContent = text;
         spans[i].replaceWith(mark);
     }
-}
+};
 
 document.querySelector('.b-10').onclick = () => t10('.p-10');
 
@@ -132,18 +132,18 @@ const t12 = (temperature) => {
     if (temperature >= 0 && temperature <= 20) {
         return 'cold';
     } else if (temperature > 20 && temperature <= 35) {
-        return 'normal'
+        return 'normal';
     } else if (temperature > 35 && temperature <= 50) {
-        return 'hot'
+        return 'hot';
     } else {
-        return 'very hot'
+        return 'very hot';
     }
-}
+};
 
 document.querySelector('.range-12').oninput = () => {
     const t = +document.querySelector('.range-12').value;
     document.querySelector('.out-12').textContent = t12(t);
-}
+};
 
 
 // Task 13
@@ -154,7 +154,7 @@ const t13 = string => string.trim();
 document.querySelector('.b-13').onclick = () => {
     let str = '  Stormbringer    ';
     console.log(t13(str));
-}
+};
 
 
 // Task 14
@@ -165,7 +165,7 @@ const t14 = number => number % 2 === 0;
 document.querySelector('.b-14').onclick = () => {
     const n = +document.querySelector('.i-14').value;
     document.querySelector('.out-14').textContent = t14(n);
-}
+};
 
 
 // Task 15
@@ -175,7 +175,7 @@ const t15 = className => Boolean(document.querySelector(className));
 
 document.querySelector('.b-15').onclick = () => {
     document.querySelector('.out-15').textContent = t15('.out-155555555');
-}
+};
 
 
 // Task 16
@@ -185,7 +185,7 @@ const t16 = string => string.includes('@');
 
 document.querySelector('.b-16').onclick = () => {
     document.querySelector('.out-16').textContent = t16('example@mail.ua');
-}
+};
 
 
 // Task 17
@@ -195,7 +195,7 @@ const t17 = () => 10;
 
 document.querySelector('.b-17').onclick = () => {
     document.querySelector('.out-17').textContent = (t17() + 5 === 15);
-}
+};
 
 
 // Task 18
@@ -205,7 +205,7 @@ const t18 = () => 2;
 
 document.querySelector('.b-18').onclick = () => {
     document.querySelector('.out-18').textContent = ((100 - 10 * t18()) / t18()) === 40;
-}
+};
 
 
 // Task 19
@@ -215,7 +215,7 @@ const t19 = () => false;
 
 document.querySelector('.b-19').onclick = () => {
     document.querySelector('.out-19').textContent = !t19();
-}
+};
 
 
 // Task 20
@@ -225,5 +225,5 @@ const t20 = () => 1;
 
 document.querySelector('.b-20').onclick = () => {
     document.querySelector('.out-20').textContent = (true !== !t20());
-}
+};
 

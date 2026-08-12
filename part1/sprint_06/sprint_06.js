@@ -268,7 +268,7 @@ function t16() {
 
     i16.length < 5 ? out16.style.backgroundColor = 'red'
         : i16.length >= 5 && i16.length <= 10 ? out16.style.backgroundColor = 'orange'
-            : out16.style.backgroundColor = 'green'
+            : out16.style.backgroundColor = 'green';
 }
 
 document.querySelector('.i-16').oninput = t16;
