@@ -66,8 +66,8 @@ document.querySelector('.b-6').addEventListener('click', t06);
 const arr_07 = ["OS", "Windows"];
 
 const t07 = () => {
-    arr_07[1] = 'Arch'
-    arr_07[2] = 'Linux'
+    arr_07[1] = 'Arch';
+    arr_07[2] = 'Linux';
     console.log(arr_07);
 }
 
@@ -78,11 +78,13 @@ document.querySelector('.b-7').addEventListener('click', t07);
 // Создан массив arr_08. Напишите функцию, которая добавляет в массив значение "Open" под индексом 1. И значение "Linux" под индексом 20. Для проверки выведите массив в консоль. Функция должна выводить длину массива после добавления элементов в .out-8.
 
 const arr_08 = ["OS", "Windows"];
+const out8 = document.querySelector('.out-8');
 
 const t08 = () => {
     arr_08[1] = 'Open';
-    arr_07[20] = 'Linux';
-    console.log(arr_08.length);
+    arr_08[20] = 'Linux';
+    out8.textContent = arr_08.length;
+    console.log(arr_08);
 }
 
 document.querySelector('.b-8').addEventListener('click', t08);
@@ -121,9 +123,11 @@ document.querySelector('.b-10').addEventListener('click', t10);
 // Создан массив arr_11. Напишите функцию t11. Функция выполняется по клику на кнопку. Функция применяет метод unshift() к массиву arr_11. Значения для добавления в массив берет из input.i-11. Выводит массив в консоль для проверки.
 
 const arr_11 = ["SUSE", "Unbreakable Linux", "Yellow Dog", "Slackware"];
+const i11 = document.querySelector('.i-11');
 
 const t11 = () => {
-
+    arr_11.unshift(i11.value);
+    console.log(arr_11);
 }
 
 document.querySelector('.b-11').addEventListener('click', t11);
@@ -135,7 +139,8 @@ document.querySelector('.b-11').addEventListener('click', t11);
 const arr_12 = ["Slackware", "Почему", "Патрик", "Бог"];
 
 const t12 = () => {
-
+    arr_12.shift();
+    console.log(arr_12);
 }
 
 document.querySelector('.b-12').addEventListener('click', t12);
@@ -145,9 +150,10 @@ document.querySelector('.b-12').addEventListener('click', t12);
 // Создан массив arr_13. Напишите функцию t13. Функция выполняется по клику на кнопку. Функция выводит значения массива arr_13 в .out-13 с помощью метода join. Разделитель значений - знак подчеркивания.
 
 const arr_13 = ["Slackware", "Slax", "Porteus", "Alpine Linux"];
+const out13 = document.querySelector('.out-13');
 
 const t13 = () => {
-
+    out13.textContent = arr_13.join('_');
 }
 
 document.querySelector('.b-13').addEventListener('click', t13);
@@ -157,9 +163,15 @@ document.querySelector('.b-13').addEventListener('click', t13);
 // Создан массив arr_14. Напишите функцию t14. Функция выполняется по клику на кнопку. Функция выводит значения массива arr_14 в .out-14 с помощью цикла. Разделитель значений - знак подчеркивания.
 
 const arr_14 = [19.1, 20.04, 20.1, 21.04];
+const out14 = document.querySelector('.out-14');
 
 const t14 = () => {
+    let arrValues = '';
+    for (let i = 0; i < arr_14.length; i++) {
+        arrValues += `${arr_14[i]}_`;
+    }
 
+    out14.textContent = arrValues;
 }
 
 document.querySelector('.b-14').addEventListener('click', t14);
@@ -169,9 +181,15 @@ document.querySelector('.b-14').addEventListener('click', t14);
 // Создан массив arr_15. Напишите функцию t15. Функция выполняется по клику на кнопку. Функция выводит только четные значения массива arr_15 в .out-15 с помощью цикла. Разделитель значений - знак подчеркивания.
 
 const arr_15 = [22, 33, 44, 55, 65, 66, 67, 68];
+const out15 = document.querySelector('.out-15');
 
 const t15 = () => {
+    let arrEven = '';
+    for (let i = 0; i < arr_15.length; i++) {
+        if (arr_15[i] % 2 === 0) arrEven += `${arr_15[i]}_`;
+    }
 
+    out15.textContent = arrEven;
 }
 
 document.querySelector('.b-15').addEventListener('click', t15);
@@ -181,9 +199,15 @@ document.querySelector('.b-15').addEventListener('click', t15);
 // Создан массив arr_16. Напишите функцию t16. Функция выполняется по клику на кнопку. Функция выводит значения с четными индексом из массива arr_16 в .out-16 с помощью цикла. Разделитель значений - знак подчеркивания.
 
 const arr_16 = ["Warty Warthog", "Hoary Hedgehog", "Breezy Badger", "Dapper Drake"];
+const out16 = document.querySelector('.out-16');
 
 const t16 = () => {
+    let arrIndexEven = '';
+    for (let i = 0; i < arr_16.length; i++) {
+        if (i % 2 === 0) arrIndexEven += `${arr_16[i]}_`;
+    }
 
+    out16.textContent = arrIndexEven;
 }
 
 document.querySelector('.b-16').addEventListener('click', t16);
@@ -195,9 +219,11 @@ document.querySelector('.b-16').addEventListener('click', t16);
 // или Gutsy Gibbon_Feisty Fawn_Edgy Eft
 
 const arr_17 = ["Edgy Eft", "Feisty Fawn", "Gutsy Gibbon"];
+const out17 = document.querySelector('.out-17');
 
 const t17 = () => {
-
+    let arr17Reversed = [...arr_17].reverse();
+    out17.textContent = arr17Reversed.join('_');
 }
 
 document.querySelector('.b-17').addEventListener('click', t17);
@@ -207,9 +233,14 @@ document.querySelector('.b-17').addEventListener('click', t17);
 // Создан массив arr_18. Функция должна вывести значения из массива с индексом 0, 1, 5, 7 в .out-18. Разделитель  - пробел (под пробелом мы понимаем один пробел получаемый нажатием кнопки Space на клавиатуре).
 
 const arr_18 = ["Hardy", "Heron", "Intrepid", "Ibex", "Jaunty", "Jackalope", "Lucid", "Lynx", "Maverick"];
+const out18 = document.querySelector('.out-18');
 
 const t18 = () => {
-
+    let arr18SpecInd = '';
+    for (let i = 0; i < arr_18.length; i++) {
+        if (i === 0 || i === 1 || i === 5 || i === 7) arr18SpecInd += `${arr_18[i]} `;
+    }
+    out18.textContent = arr18SpecInd;
 }
 
 document.querySelector('.b-18').addEventListener('click', t18);
@@ -218,9 +249,15 @@ document.querySelector('.b-18').addEventListener('click', t18);
 // Создан массив arr_19. Функция должна на основе массива сформировать строку вида: '0 : 11<br>1 : 22<br>2 : 33<br>' и вывести в .out-19 с помощью innerHTML. Числа 0, 1, 2 это индекс значения в массиве, а 11, 22, 33 - значения в массиве. Внимание! При проверке значения и индексы будут использованы другие.
 
 const arr_19 = [11, 22, 33];
+const out19 = document.querySelector('.out-19');
 
 const t19 = () => {
+    let arr19Elems = '';
+    for (let i = 0; i < arr_19.length; i++) {
+        arr19Elems += `${i} : ${arr_19[i]}<br>`;
+    }
 
+    out19.innerHTML = arr19Elems;
 }
 
 document.querySelector('.b-19').addEventListener('click', t19);
@@ -230,9 +267,10 @@ document.querySelector('.b-19').addEventListener('click', t19);
 // Создан массив arr_20. Функция должна выводить на страницу значение из массива с индексом 100. Вывод осуществлять через innerHTML.
 
 const arr_20 = [];
+const out20 = document.querySelector('.out-20');
 
 const t20 = () => {
-
+    out20.innerHTML = arr_20[100];
 }
 
 document.querySelector('.b-20').addEventListener('click', t20);
@@ -242,9 +280,15 @@ document.querySelector('.b-20').addEventListener('click', t20);
 // Создан массив arr_21. Функция получать значения из input.i-21, проверяет длину масива. Если длина массива arr_21 меньше 10, то добавляет значение в массив. Функция должна выводить массив в .out-21 c помощью join(). Разделитель значений - знак подчеркивания.
 
 const arr_21 = ['aa', 'bb', 'cc'];
+const out21 = document.querySelector('.out-21');
+const i21 = document.querySelector('.i-21');
 
 const t21 = () => {
+    if (arr_21.length < 10) {
+        arr_21.push(i21.value);
+    }
 
+    out21.textContent = arr_21.join('_');
 }
 
 document.querySelector('.b-21').addEventListener('click', t21);
@@ -254,9 +298,17 @@ document.querySelector('.b-21').addEventListener('click', t21);
 // Создан массив arr_22. Функция получает значение как аргумент и перебирает массив arr_22 сравнивая со значениями из массива. Если введенное значение находится в массиве, то функция выводит 1 в .out-22. Если не находит - выводит 0.
 
 const arr_22 = [101, 201, 301, 401];
+const out22 = document.querySelector('.out-22');
 
 const t22 = (n) => {
-
+    for (let i = 0; i < arr_22.length; i++) {
+        if (arr_22[i] === n) {
+            out22.textContent = 1;
+            break;
+        } else {
+            out22.textContent = 0;
+        }
+    }
 }
 
 document.querySelector('.b-22').addEventListener('click', () => {
@@ -267,9 +319,7 @@ document.querySelector('.b-22').addEventListener('click', () => {
 // Task 23
 // Функция получает два массива как аргументы. Сравнивает их длину. Если длины совпадают - возвращает true, если не совпадают - false.
 
-const t23 = (m1, m2) => {
-
-}
+const t23 = (m1, m2) => m1.length === m2.length;
 
 document.querySelector('.b-23').addEventListener('click', () => {
     document.querySelector('.out-23').textContent = t23([44, 55], [66, 77]);
