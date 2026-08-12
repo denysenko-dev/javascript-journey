@@ -15,7 +15,7 @@ document.querySelector('.b-1').onclick = t01;
 // Task 2
 // Именованную функцию можно запускать просто указав имя и скобки. Снимите комментарий с кода ниже. Изучите, когда сработает функция. И да, функции можно запускать много раз.
 
-const out2 = document.querySelector('.out-2')
+const out2 = document.querySelector('.out-2');
 
 function t02() {
     out2.textContent += 'work ';
@@ -41,7 +41,7 @@ const out4 = document.querySelector('.out-4');
 
 document.querySelector('.b-4').onclick = function () {
     out4.textContent = 'work ';
-}
+};
 
 
 // Тask 5
@@ -59,7 +59,7 @@ const out5 = document.querySelector('.out-5');
 
 const t06 = function () {
     document.querySelector('.out-6').textContent += 'work ';
-}
+};
 
 document.querySelector('.b-6').onclick = t06;
 
@@ -67,7 +67,7 @@ document.querySelector('.b-6').onclick = t06;
 // Task 7
 // Давайте рассмотрим функцию ниже. Функция выводит в .out-7 сумму двух переменных. Функция работает, но она жестко завязана на данные переменные. Т.е. функция всегда выводит один и тот же результат. Изучите функцию t07. Функция делает одно и тоже. Всегда. Т.е. даже если мы вызовем функцию t07 много раз - результат будет один и тот же. 
 
-const out7 = document.querySelector('.out-7')
+const out7 = document.querySelector('.out-7');
 
 function t07() {
     let a = 6;
@@ -80,7 +80,7 @@ document.querySelector('.b-7').onclick = t07;
 // Task 8
 // Давайте сделаем шаг к более универсальной функции. Изучите как работает функция t08.
 
-const out8 = document.querySelector('.out-8')
+const out8 = document.querySelector('.out-8');
 
 function t08(a, b) {
     out8.textContent = a + b;
@@ -88,11 +88,11 @@ function t08(a, b) {
 
 document.querySelector('.b-81').onclick = function () {
     t08(100, 200);
-}
+};
 
 document.querySelector('.b-82').onclick = function () {
     t08(300, 400);
-}
+};
 
 // Task 9
 // Напишите функцию t09, которая принимает два числа (как аргументы) и выводит большее число в .out-9.
@@ -105,7 +105,7 @@ function t09(a, b) {
 
 document.querySelector('.b-9').onclick = function () {
     t09(70, 90);
-}
+};
 
 
 // Task 10
@@ -119,7 +119,7 @@ function t10(min, max) {
 
 document.querySelector('.b-10').onclick = function () {
     t10(0, 10);
-}
+};
 
 // Task 11
 // Напишите функцию t11, которая принимает три числа как аргументы и выводит в .out-11 меньшее из трех чисел.
@@ -132,7 +132,7 @@ function t11(a, b, c) {
 
 document.querySelector('.b-11').onclick = function () {
     t11(0, -8, 10);
-}
+};
 
 // Task 12
 // Напишите функцию t12, которая принимает в качестве аргумента ccылку на изображение, создает через createElement изображение, присваивает полученный как аргумент src, и выводит через append в .out-12.
@@ -147,11 +147,11 @@ function t12(src) {
 
 document.querySelector('.b-121').onclick = function () {
     t12('./images/28986.jpg');
-}
+};
 
 document.querySelector('.b-122').onclick = function () {
     t12('./images/28983.jpg');
-}
+};
 
 // Task 13
 // Напишите функцию t13, которая получает текст, как аргумент, создает параграф с данным текстом и выводит в .out-13 созданный параграф.
@@ -168,7 +168,7 @@ function t13(incomingText) {
 document.querySelector('.b-13').onclick = function () {
     const text = document.querySelector('.i-13').value;
     t13(text);
-}
+};
 
 
 // Task 14
@@ -181,7 +181,7 @@ function t14(className, color) {
 
 document.querySelector('.b-14').onclick = function () {
     t14('.out-14', 'orange');
-}
+};
 
 // Task 15
 // Напишите функцию t15, которая получает аргумент - имя пользователя и создает гиперссылку, где атрибут href равен '/logout', а текст гиперссылки - текст переданный как аргумент. Добавьте гиперссылке класс 'button', 'button-primary'. С помощь append добавьте созданную ссылку в .out-15.
@@ -199,7 +199,7 @@ function t15(userName) {
 
 document.querySelector('.b-15').onclick = function () {
     t15('felson@crusader.eu');
-}
+};
 
 // Task 16
 // Напишите функцию t16, которая получает аргумент - имя пользователя и создает гиперссылку, где атрибут href равен '/logout', а текст гиперссылки - текст переданный как аргумент. Добавьте гиперссылке класс 'button', 'button-primary'. Функция должна ВОЗВРАЩАТЬ созданную гиперссылку.
@@ -215,7 +215,7 @@ function t16(userName) {
 document.querySelector('.b-16').onclick = function () {
     const link = t16('kay@tritagonist.eu');
     document.querySelector('.out-16').append(link);
-}
+};
 
 // Task 17
 // Напишите функцию t17, которая получает два числа как аргументы и ВОЗВРАЩАЕТ случайное целое число в переданном диапазоне.
@@ -226,7 +226,7 @@ function t17(min, max) {
 
 document.querySelector('.b-17').onclick = function () {
     document.querySelector('.out-17').textContent = t17(100, 110);
-}
+};
 
 // Task 18
 // Напишите функцию t18, которая возвращает значение value (число) элемента input, класс которого передан как аргумент в функцию t18.
@@ -240,7 +240,7 @@ document.querySelector('.b-18').onclick = function () {
     const a = t18('.i-181');
     const b = t18('.i-182');
     document.querySelector('.out-18').textContent = (a > b) ? a : b;
-}
+};
 
 // Task 19
 // Напишите функцию t19, которая принимает три аргумента: num1, num2 - числа и sign - строку знак операции. sign может быть равен '+', '-', '/', '*'. В зависимости от знака функция должна возвращать результат выбранной операции над числами. Например, передали числа 10 и 5 и знак '/'. Функция должна возвратить 2.

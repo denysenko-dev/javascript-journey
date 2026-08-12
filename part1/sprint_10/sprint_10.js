@@ -60,7 +60,7 @@ document.querySelector('.b-4').onclick = t04;
 function t05() {
     const i5 = document.querySelector('.i-5');
 
-    i5.setAttribute('type', 'password')
+    i5.setAttribute('type', 'password');
 }
 
 document.querySelector('.b-5').onclick = t05;
