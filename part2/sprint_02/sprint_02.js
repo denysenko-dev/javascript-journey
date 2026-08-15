@@ -7,9 +7,7 @@
 // ['hello']
 // Array(10)
 
-const t01 = arr => {
-
-};
+const t01 = arr => Array.isArray(arr);
 
 document.querySelector('.b-1').addEventListener('click', () => {
     document.querySelector('.out-1').textContent = t01([4, 5]);
@@ -20,10 +18,14 @@ document.querySelector('.b-1').addEventListener('click', () => {
 // Создан массив arr_02. Напишите функцию t02, которая получает значение из input.i-2, переводит в число и проверяет наличие такого значения в массиве arr_02. Если значение есть то массив выводится в .out-2, разделитель - пробел. Если значения нет - добавляется в массив, а массив выводится в .out-2. Разделитель значений - пробел. 
 
 const arr_02 = [19, 17, 22, 47, 15];
+const out2 = document.querySelector('.out-2');
 
 const t02 = () => {
+    const i2Value = Number(document.querySelector('.i-2').value);
 
-}
+    if (!arr_02.includes(i2Value)) arr_02.push(i2Value);
+    out2.textContent = arr_02.join(' ');
+};
 
 document.querySelector('.b-2').addEventListener('click', t02);
 
@@ -31,8 +33,17 @@ document.querySelector('.b-2').addEventListener('click', t02);
 // Напишите функцию, которая эмулирует работу метода includes с помощью цикла. Функция принимает два аргумента: массив и значение. С помощью цикла перебирает массив и если находит совпадение, то возвращает true. Если не находит - false.
 
 const t03 = (arr, item) => {
+    let arrBool = false;
 
-}
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === item) {
+            arrBool = true;
+            break;
+        }
+    }
+
+    return arrBool;
+};
 
 document.querySelector('.b-3').addEventListener('click', () => {
     const n = +document.querySelector('.i-3').value;
@@ -44,10 +55,13 @@ document.querySelector('.b-3').addEventListener('click', () => {
 // Создан массив arr_04. Напишите функцию t04, функция с помощью цикла выведите в .out-4 четные индексы из массива arr_04. Разделитель знак подчеркивания.
 
 let arr_04 = ["joust", "river raid", "seaquest", "asteroids", "dig dug"];
+const out4 = document.querySelector('.out-4');
 
 const t04 = () => {
-
-}
+    let arrStr = '';
+    for (let i = 0; i < arr_04.length; i++) if (i % 2 === 0) arrStr += `${arr_04[i]}_`;
+    out4.textContent = arrStr;
+};
 
 document.querySelector('.b-4').addEventListener('click', t04);
 
@@ -56,10 +70,9 @@ document.querySelector('.b-4').addEventListener('click', t04);
 // Создан массив arr_05. Напишите функцию t05. Функция должна выводить на страницу самое маленькое число массива.
 
 let arr_05 = [22, 12, -9, 99, -8, -12, 55, 23];
+const out5 = document.querySelector('.out-5');
 
-const t05 = () => {
-
-}
+const t05 = () => out5.textContent = Math.min(...arr_05);
 
 document.querySelector('.b-5').addEventListener('click', t05);
 
@@ -68,10 +81,9 @@ document.querySelector('.b-5').addEventListener('click', t05);
 // Создан массив arr_06. Напишите функцию, которая выводит самую большую строку (по длине) из массива в .out-6.
 
 const arr_06 = ["joust", "river raid", "seaquest", "asteroids", "dig dug"];
+const out6 = document.querySelector('.out-6');
 
-const t06 = () => {
-
-}
+const t06 = () => out6.textContent = arr_06.reduce((longest, str) => str.length > longest.length ? str : longest);
 
 document.querySelector('.b-6').addEventListener('click', t06);
 
@@ -80,10 +92,14 @@ document.querySelector('.b-6').addEventListener('click', t06);
 // Создан массив arr_07. Напишите функцию, которая получает из input.i-7 значение - число, и добавляет его в начало и в конец массива arr_7. Массив выводит в .out-7. Разделитель - подчеркивание.
 
 const arr_07 = [55];
+const out7 = document.querySelector('.out-7');
 
 const t07 = () => {
-
-}
+    const i7Value = Number(document.querySelector('.i-7').value);
+    arr_07.unshift(i7Value);
+    arr_07.push(i7Value);
+    out7.textContent = arr_07.join('_');
+};
 
 document.querySelector('.b-7').addEventListener('click', t07);
 
@@ -94,8 +110,14 @@ document.querySelector('.b-7').addEventListener('click', t07);
 const arr_08 = ["OS", "Windows"];
 
 const t08 = (arr) => {
+    let newArr = [];
 
-}
+    for (let i = 0; i < arr.length; i++) {
+        newArr.push(arr[i]);
+    }
+
+    return newArr;
+};
 
 document.querySelector('.b-8').addEventListener('click', () => {
     const result = t08(arr_08);
@@ -113,7 +135,7 @@ const t09 = () => {
     const a = [11, 22, 33, 44, 55];
     const b = [...a];
     console.log(b);
-}
+};
 
 document.querySelector('.b-9').addEventListener('click', t09);
 
@@ -125,7 +147,7 @@ const t10 = () => {
     const a = [11, 22, 33, 44, 55];
     const b = [...a, 66];
     console.log(b);
-}
+};
 
 document.querySelector('.b-10').addEventListener('click', t10);
 
@@ -134,11 +156,14 @@ document.querySelector('.b-10').addEventListener('click', t10);
 // Напишите функцию, которая с помощью оператора spread добавляет в начало массива arr_11 строку считанную из input.i-11 в. Функция должна выводить массив в строку .out-11. Разделитель - пробел.
 
 let arr_11 = ["SUSE", "Unbreakable Linux", "Yellow Dog", "Slackware"];
+const out11 = document.querySelector('.out-11');
 
 const t11 = () => {
+    const i11Value = document.querySelector('.i-11').value;
+    const newArr = [i11Value, ...arr_11];
 
-
-}
+    out11.textContent = newArr.join(' ');
+};
 
 document.querySelector('.b-11').addEventListener('click', t11);
 
@@ -152,7 +177,7 @@ const t12 = () => {
     const [a, b] = arr_12;
     console.log(a);
     console.log(b);
-}
+};
 
 document.querySelector('.b-12').addEventListener('click', t12);
 
@@ -161,9 +186,9 @@ document.querySelector('.b-12').addEventListener('click', t12);
 // Создан массив arr_13. Напишите функцию t13. Функция выполняется по клику на кнопку. Функция должна с помощью метода at вывести значение под индексом 2 в .out-13.
 
 const arr_13 = ["Slackware", "Slax", "Porteus", "Alpine Linux"];
+const out13 = document.querySelector('.out-13');
 
-const t13 = () => {
-}
+const t13 = () => out13.textContent = arr_13.at(2);
 
 document.querySelector('.b-13').addEventListener('click', t13);
 
@@ -172,10 +197,13 @@ document.querySelector('.b-13').addEventListener('click', t13);
 // Создан массив arr_14. Напишите функцию t14. Функция выполняется по клику на кнопку. Функция получает число из input.i-14 и ищет данное число в массиве arr_14. Если находит совпадение, то выводит индекс данного значения в массиве (первый найденный). Если не находит - выводит -1. Результат выводится в .out-14.
 
 const arr_14 = [666, 777, 888];
+const out14 = document.querySelector('.out-14');
 
 const t14 = () => {
+    const i14Value = Number(document.querySelector('.i-14').value);
 
-}
+    arr_14.includes(i14Value) ? out14.textContent = arr_14.indexOf(i14Value) : out14.textContent = -1;
+};
 
 document.querySelector('.b-14').addEventListener('click', t14);
 
@@ -184,10 +212,13 @@ document.querySelector('.b-14').addEventListener('click', t14);
 // Создан массив arr_15. Напишите функцию t15. Функция выполняется по клику на кнопку. Функция получает число из input.i-15 и ищет данное число в массиве arr_15. Если находит совпадение, то выводит индекс данного значения в массиве (первый найденный). Если не находит - выводит false. Результат выводится в .out-15. Кстати, в этой задаче неплохо работает тернарный оператор.
 
 const arr_15 = [666, 777, 888];
+const out15 = document.querySelector('.out-15');
 
 const t15 = () => {
+    const i15Value = Number(document.querySelector('.i-15').value);
 
-}
+    arr_15.includes(i15Value) ? out15.textContent = arr_15.indexOf(i15Value) : out15.textContent = false;
+};
 
 document.querySelector('.b-15').addEventListener('click', t15);
 
@@ -198,9 +229,7 @@ document.querySelector('.b-15').addEventListener('click', t15);
 const arr_16 = [18, 18, 19, 19, 20, 20]; // ожидаю true
 // const arr_16 = [18, 18, 19, 1, 20, 20]; // а на этом примере даст false.
 
-const t16 = () => {
-
-}
+const t16 = () => arr_16.every((item, i) => i % 2 || item === arr_16[i + 1]);
 
 document.querySelector('.b-16').addEventListener('click', () => {
     document.querySelector('.out-16').textContent = t16();
@@ -212,9 +241,7 @@ document.querySelector('.b-16').addEventListener('click', () => {
 
 const arr_17 = [100, 200, 300, 100, 200, 300];
 
-const t17 = (arr, n) => {
-
-}
+const t17 = (arr, n) => arr.includes(n) ? arr.lastIndexOf(n) : -1;
 
 document.querySelector('.b-17').addEventListener('click', () => {
     document.querySelector('.out-17').textContent = t17(arr_17, 200); // ожидаю 4
@@ -225,10 +252,13 @@ document.querySelector('.b-17').addEventListener('click', () => {
 // Создан массив arr_18. Напишите функцию t18, которая применяет метод map, и функцию в методе t888. Результирующий массив выводится в .out-18, разделитель пробел. 
 
 const arr_18 = [11, 22, 33];
+const out18 = document.querySelector('.out-18');
 
 const t18 = () => {
+    const arrPlus = arr_18.map(t888);
 
-}
+    out18.textContent = arrPlus.join(' ');
+};
 
 const t888 = (item) => item + 10;
 
@@ -241,8 +271,9 @@ const arr_19 = [11, 22, 33];
 let res_19 = [];
 
 const t19 = () => {
-
-}
+    res_19 = arr_19.map(item => item % 2 === 0 ? 0 : item);
+    console.log(res_19);
+};
 
 document.querySelector('.b-19').addEventListener('click', t19);
 
@@ -257,8 +288,9 @@ arr_20[10] = 200;
 let res_20 = [];
 
 const t20 = () => {
-
-}
+    res_20 = arr_20.map(item => item * 2);
+    console.log(res_20);
+};
 
 document.querySelector('.b-20').addEventListener('click', t20);
 
@@ -269,8 +301,9 @@ document.querySelector('.b-20').addEventListener('click', t20);
 let arr_21 = ['Aa ', ' bB ', ' cC'];
 
 const t21 = () => {
-
-}
+    arr_21 = arr_21.map(item => item.toLowerCase().trim());
+    console.log(arr_21);
+};
 
 document.querySelector('.b-21').addEventListener('click', t21);
 
@@ -281,8 +314,9 @@ document.querySelector('.b-21').addEventListener('click', t21);
 let arr_22 = [101, 201, 301, 401];
 
 const t22 = () => {
-
-}
+    arr_22 = arr_22.map((item, i) => i);
+    console.log(arr_22);
+};
 
 document.querySelector('.b-22').addEventListener('click', t22);
 
@@ -294,8 +328,9 @@ const arr_23 = [1, 101, 3, 102, 4, 201, 202, -9];
 let res_23 = [];
 
 const t23 = () => {
-
-}
+    res_23 = arr_23.filter(item => item > 100);
+    console.log(res_23);
+};
 
 document.querySelector('.b-23').addEventListener('click', t23);
 
@@ -307,8 +342,9 @@ const arr_24 = [1, 101, 3, 102, 4, 201, 202, -9];
 let res_24 = [];
 
 const t24 = () => {
-
-}
+    res_24 = arr_24.filter(item => item % 2 === 0);
+    console.log(res_24);
+};
 
 document.querySelector('.b-24').addEventListener('click', t24);
 
@@ -316,11 +352,12 @@ document.querySelector('.b-24').addEventListener('click', t24);
 // Task 25
 // Функция должна на основе arr_25 создавать массив res_25  который содержит не пустые строки из arr_25. В данном задании под непустыми строками понимаем строки длиной больше 1 и не состоящие из одних пробелов. Выведите в консоль res_25.
 
-const arr_25 = ['test', '', 'best', '  ', 'rest'];
+const arr_25 = ['test', '1', 'best', '  ', 'rest'];
 let res_25 = [];
 
 const t25 = () => {
-
-}
+    res_25 = arr_25.filter(item => item.trim().length > 1);
+    console.log(res_25);
+};
 
 document.querySelector('.b-25').addEventListener('click', t25);
