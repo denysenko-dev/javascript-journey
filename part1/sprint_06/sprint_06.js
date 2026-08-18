@@ -85,7 +85,7 @@ function t06() {
     const i6 = document.querySelector('.i-6').value.length;
     const out6 = document.querySelector('.out-6');
 
-    i6 > 10 ? out6.textContent = 'true' : out6.textContent = 'false';
+    out6.textContent = i6 > 10 ? 'true' : 'false';
 }
 
 document.querySelector('.b-6').onclick = t06;
@@ -165,8 +165,6 @@ function t10() {
     const r10 = Number(document.querySelector('.r-10').value);
     const out10 = document.querySelector('.out-10');
 
-    console.log(r10);
-
     if (r10 >= 20 && r10 <= 30) {
         out10.textContent = 'cold';
     } else if (r10 > 30 && r10 <= 50) {
@@ -192,7 +190,7 @@ function t11() {
         return;
     }
 
-    if (name && pass.length < 10) {
+    if (pass.length < 10) {
         out11.textContent = 'password error';
     } else {
         out11.textContent = 'true';
@@ -210,7 +208,7 @@ let num_2 = 19;
 function t12() {
     const out12 = document.querySelector('.out-12');
 
-    num_1 > num_2 ? out12.textContent = num_1 : out12.textContent = num_2;
+    out12.textContent = num_1 > num_2 ? num_1 : num_2;
 }
 
 document.querySelector('.b-12').onclick = t12;
@@ -238,7 +236,7 @@ let g14 = 2001;
 function t14() {
     const out14 = document.querySelector('.out-14');
 
-    g14 !== 2000 ? out14.textContent = 0 : out14.textContent = 1;
+    out14.textContent = g14 !== 2000 ? 0 : 1;
 }
 
 document.querySelector('.b-14').onclick = t14;
@@ -251,7 +249,7 @@ function t15() {
     const s15 = document.querySelector('.s-15').value;
     const out15 = document.querySelector('.out-15');
 
-    s15 === 'true' ? out15.textContent = 'sale' : out15.textContent = '';
+    out15.textContent = s15 === 'true' ? 'sale' : '';
 }
 
 document.querySelector('.s-15').onchange = t15;
@@ -266,9 +264,9 @@ function t16() {
 
     out16.textContent = i16;
 
-    i16.length < 5 ? out16.style.backgroundColor = 'red'
-        : i16.length >= 5 && i16.length <= 10 ? out16.style.backgroundColor = 'orange'
-            : out16.style.backgroundColor = 'green';
+    out16.style.backgroundColor = i16.length < 5 ? 'red'
+        : i16.length <= 10 ? 'orange'
+            : 'green';
 }
 
 document.querySelector('.i-16').oninput = t16;
@@ -338,7 +336,7 @@ function t19() {
     const ch19 = document.querySelector('.ch-19').checked;
     const out19 = document.querySelector('.out-19');
 
-    ch19 ? out19.textContent = 1 : out19.textContent = 0;
+    out19.textContent = ch19 ? 1 : 0;
 }
 
 document.querySelector('.b-19').onclick = t19;
@@ -350,7 +348,7 @@ function t20() {
     const ch20 = document.querySelector('.ch-20');
     const out20 = document.querySelector('.out-20');
 
-    ch20.checked ? out20.textContent = ch20.value : out20.textContent = 0;
+    out20.textContent = ch20.checked ? ch20.value : 0;
 }
 
 document.querySelector('.ch-20').oninput = t20;

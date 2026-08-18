@@ -179,8 +179,11 @@ document.querySelector('.b-14').onclick = t14;
 function t15() {
     const out15 = document.querySelector('.out-15');
 
-    out15.hasAttribute('hidden') ? out15.removeAttribute('hidden') : out15.setAttribute('hidden', '');
-
+    if (out15.hasAttribute('hidden')) {
+        out15.removeAttribute('hidden')
+    } else {
+        out15.setAttribute('hidden', '')
+    }
 }
 
 document.querySelector('.b-15').onclick = t15;

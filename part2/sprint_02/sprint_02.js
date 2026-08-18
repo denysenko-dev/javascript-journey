@@ -202,7 +202,7 @@ const out14 = document.querySelector('.out-14');
 const t14 = () => {
     const i14Value = Number(document.querySelector('.i-14').value);
 
-    arr_14.includes(i14Value) ? out14.textContent = arr_14.indexOf(i14Value) : out14.textContent = -1;
+    out14.textContent = arr_14.includes(i14Value) ? arr_14.indexOf(i14Value) : -1;
 };
 
 document.querySelector('.b-14').addEventListener('click', t14);
@@ -217,7 +217,7 @@ const out15 = document.querySelector('.out-15');
 const t15 = () => {
     const i15Value = Number(document.querySelector('.i-15').value);
 
-    arr_15.includes(i15Value) ? out15.textContent = arr_15.indexOf(i15Value) : out15.textContent = false;
+    out15.textContent = arr_15.includes(i15Value) ? arr_15.indexOf(i15Value) : false;
 };
 
 document.querySelector('.b-15').addEventListener('click', t15);
