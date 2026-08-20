@@ -30,8 +30,7 @@ let arr_02 = [
     [13, 14, 15, 16]
 ];
 
-const t02 = () => {
-}
+const t02 = () => arr_02[3][3];
 
 document.querySelector('.b-2').addEventListener('click', () => $('.out-2').textContent = t02());
 
@@ -45,8 +44,7 @@ let arr_03 = [
     [9, 10, 11, 12],
 ];
 
-const t03 = () => {
-}
+const t03 = () => arr_03[1][1][2];
 
 document.querySelector('.b-3').addEventListener('click', () => $('.out-3').textContent = t03());
 
@@ -58,8 +56,7 @@ let arr_04 = [
     [[[1, 2, 3, 4]]],
 ];
 
-const t04 = () => {
-}
+const t04 = () => arr_04[0][0][0][2];
 
 document.querySelector('.b-4').addEventListener('click', () => $('.out-4').textContent = t04());
 
@@ -71,8 +68,7 @@ let arr_05 = [
     [1, 2], 3, [4, 5], [6]
 ];
 
-const t05 = () => {
-}
+const t05 = () => arr_05[3];
 
 document.querySelector('.b-5').addEventListener('click', () => $('.out-5').textContent = t05());
 
@@ -88,8 +84,7 @@ let arr_06 = [
     ]
 ];
 
-const t06 = () => {
-}
+const t06 = () => arr_06[2][0][1];
 
 document.querySelector('.b-6').addEventListener('click', () => $('.out-6').textContent = t06());
 
@@ -107,8 +102,7 @@ let arr_07 = [
     ]
 ];
 
-const t07 = () => {
-}
+const t07 = () => arr_07[2][2][0][0];
 
 document.querySelector('.b-7').addEventListener('click', () => $('.out-7').textContent = t07());
 
@@ -118,8 +112,7 @@ document.querySelector('.b-7').addEventListener('click', () => $('.out-7').textC
 
 let arr_08 = [[], [], [], [], [[], [0, 1]]];
 
-const t08 = () => {
-}
+const t08 = () => arr_08[4][1][1];
 
 document.querySelector('.b-8').addEventListener('click', () => $('.out-8').textContent = t08());
 
@@ -129,8 +122,7 @@ document.querySelector('.b-8').addEventListener('click', () => $('.out-8').textC
 
 let arr_09 = [, , , , , , [0, 1]];
 
-const t09 = () => {
-}
+const t09 = () => arr_09[6][1];
 
 document.querySelector('.b-9').addEventListener('click', () => $('.out-9').textContent = t09());
 
@@ -160,9 +152,18 @@ let arr_11 = [
 ];
 
 const t11 = () => {
-}
+    let arrString = '';
 
-document.querySelector('.b-11').addEventListener('click', t11);
+    for (let i = 0; i < arr_11.length; i++) {
+        for (let k = 0; k < arr_11[i].length; k++) {
+            if (arr_11[i][k] % 2 === 0) arrString += `${arr_11[i][k]}_`;
+        }
+    }
+
+    return arrString;
+};
+
+document.querySelector('.b-11').addEventListener('click', () => $('.out-11').innerHTML = t11());
 
 
 // Task 12
@@ -175,7 +176,16 @@ let arr_12 = [
 ];
 
 const t12 = () => {
-}
+    let arrString = '';
+
+    for (let i = 0; i < arr_12.length; i++) {
+        for (let k = 0; k < arr_12[i].length; k++) {
+            if (arr_12[i][k] > 0) arrString += `${arr_12[i][k]}_`;
+        }
+    }
+
+    return arrString;
+};
 
 document.querySelector('.b-12').addEventListener('click', () => $('.out-12').innerHTML = t12());
 
@@ -190,7 +200,18 @@ let arr_13 = [
 ];
 
 const t13 = () => {
-}
+    let arrString = '';
+
+    for (let i = 0; i < arr_13.length; i++) {
+        for (let k = 0; k < arr_13[i].length; k++) {
+            for (let j = 0; j < arr_13[i][k].length; j++) {
+                if (arr_13[i][k][j] > 0) arrString += `${arr_13[i][k][j]}_`;
+            }
+        }
+    }
+
+    return arrString;
+};
 
 document.querySelector('.b-13').addEventListener('click', () => $('.out-13').innerHTML = t13());
 
@@ -206,7 +227,16 @@ let arr_14 = [
 ];
 
 const t14 = () => {
-}
+    let arrString = '';
+
+    for (let i = 0; i < arr_14.length; i++) {
+        for (let k = 0; k < arr_14[i].length; k++) {
+            if (arr_14[i][k] > 0) arrString += `${arr_14[i][k]}_`;
+        }
+    }
+
+    return arrString;
+};
 
 document.querySelector('.b-14').addEventListener('click', () => $('.out-14').innerHTML = t14());
 
@@ -222,7 +252,16 @@ let arr_15 = [
 ];
 
 const t15 = () => {
-}
+    let lizardCounter = 0;
+
+    for (let i = 0; i < arr_15.length; i++) {
+        for (let k = 0; k < arr_15[i].length; k++) {
+            if (arr_15[i][k] === '🦎') lizardCounter++;
+        }
+    }
+
+    return lizardCounter;
+};
 
 document.querySelector('.b-15').addEventListener('click', () => $('.out-15').textContent = t15());
 
@@ -239,7 +278,14 @@ let arr_16 = [
 ];
 
 const t16 = () => {
-}
+    let doubledArray = [];
+
+    for (let i = 0; i < arr_16.length; i++) {
+        doubledArray.push(arr_16[i].map(item => item * 2));
+    }
+
+    return doubledArray;
+};
 
 document.querySelector('.b-16').addEventListener('click', () => console.log(t16()));
 
@@ -260,7 +306,14 @@ let arr_17 = [
 ];
 
 const t17 = () => {
-}
+    let positiveArray = [];
+
+    for (let i = 0; i < arr_17.length; i++) {
+        positiveArray.push(arr_17[i].filter(item => item > 0));
+    }
+
+    return positiveArray;
+};
 
 document.querySelector('.b-17').addEventListener('click', () => console.log(t17()));
 
@@ -281,7 +334,14 @@ let arr_18 = [
 ];
 
 const t18 = () => {
-}
+    let reversedArray = [];
+
+    for (let i = 0; i < arr_18.length; i++) {
+        reversedArray.push(arr_18[i].toReversed());
+    }
+
+    return reversedArray;
+};
 
 document.querySelector('.b-18').addEventListener('click', () => console.log(t18()));
 
@@ -302,7 +362,14 @@ let arr_19 = [
 ];
 
 const t19 = () => {
-}
+    let stringifiedArray = [];
+
+    for (let i = 0; i < arr_19.length; i++) {
+        stringifiedArray.push(arr_19[i].map(item => item.toString()));
+    }
+
+    return stringifiedArray;
+};
 
 document.querySelector('.b-19').addEventListener('click', () => console.log(t19()));
 
@@ -323,6 +390,13 @@ let arr_20 = [
 ];
 
 const t20 = () => {
-}
+    let stringifiedArray = [];
+
+    for (let i = 0; i < arr_20.length; i++) {
+        stringifiedArray.push(arr_20[i].map(item => item.toString().padStart(2, '0')));
+    }
+
+    return stringifiedArray;
+};
 
 document.querySelector('.b-20').addEventListener('click', () => console.log(t20()));
