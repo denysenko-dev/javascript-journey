@@ -59,7 +59,7 @@ const out4 = document.querySelector('.out-4');
 
 const t04 = () => {
     let arrStr = '';
-    for (let i = 0; i < arr_04.length; i++) if (i % 2 === 0) arrStr += `${arr_04[i]}_`;
+    for (let i = 0; i < arr_04.length; i++) if (i % 2 === 0) arrStr += `${i}_`;
     out4.textContent = arrStr;
 };
 
@@ -160,9 +160,9 @@ const out11 = document.querySelector('.out-11');
 
 const t11 = () => {
     const i11Value = document.querySelector('.i-11').value;
-    const newArr = [i11Value, ...arr_11];
+    arr_11 = [i11Value, ...arr_11];
 
-    out11.textContent = newArr.join(' ');
+    out11.textContent = arr_11.join(' ');
 };
 
 document.querySelector('.b-11').addEventListener('click', t11);
