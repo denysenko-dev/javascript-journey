@@ -68,7 +68,7 @@ let arr_05 = [
     [1, 2], 3, [4, 5], [6]
 ];
 
-const t05 = () => arr_05[3];
+const t05 = () => arr_05[3][0];
 
 document.querySelector('.b-5').addEventListener('click', () => $('.out-5').textContent = t05());
 
