@@ -15,13 +15,4 @@ part2/
 - `part2` — JavaScript24 (part 2), sprints starting from `sprint_01` (00 is an intro lesson, no code).
 - Folder name = sprint number in the course program; the `README.md` inside each folder states the lesson topic.
 
-## Git workflow
-
-One branch per sprint, merged into `main` once the task is done.
-
-```
-git checkout -b part1/sprint_02
-# work on the task
-git checkout main
-git merge part1/sprint_02
-```
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the git workflow.
