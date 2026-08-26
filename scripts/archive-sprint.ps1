@@ -1,12 +1,16 @@
 # Usage: .\scripts\archive-sprint.ps1 part1/sprint_02
+#        .\scripts\archive-sprint.ps1 part1/sprint_02 -Fix
 # Creates a zip (named after the sprint folder) containing that folder,
 # saved outside the repo in %USERPROFILE%\Desktop by default.
+# Pass -Fix to append a "_fix" suffix to the zip name for a re-submitted fix.
 
 param(
     [Parameter(Mandatory = $true)]
     [string]$SprintPath,
 
-    [string]$OutputDir = "$HOME\Desktop"
+    [string]$OutputDir = "$HOME\Desktop",
+
+    [switch]$Fix
 )
 
 $repoRoot = Split-Path -Parent $PSScriptRoot
@@ -24,7 +28,8 @@ if (-not (Test-Path $OutputDir))
 }
 
 $sprintName = Split-Path -Leaf $fullSprintPath
-$zipPath = Join-Path $OutputDir "$sprintName.zip"
+$zipName = if ($Fix) { "${sprintName}_fix" } else { $sprintName }
+$zipPath = Join-Path $OutputDir "$zipName.zip"
 
 if (Test-Path $zipPath)
 {
