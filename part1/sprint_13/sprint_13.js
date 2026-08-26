@@ -40,7 +40,7 @@ t02();
 const out4 = document.querySelector('.out-4');
 
 document.querySelector('.b-4').onclick = function () {
-    out4.textContent = 'work ';
+    out4.textContent = 'work';
 };
 
 
@@ -50,7 +50,7 @@ document.querySelector('.b-4').onclick = function () {
 const out5 = document.querySelector('.out-5');
 
 (function () {
-    out5.textContent = 'work ';
+    out5.textContent = 'work';
 })();
 
 

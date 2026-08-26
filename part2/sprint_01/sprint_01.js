@@ -26,7 +26,7 @@ console.log(arr_03);
 // Task 04
 // Создан массив arr_04. Напишите функцию t04, которая выводит длину массива в .out-4. 
 
-const arr_04 = ["Linux Mint", 19.1, "Tessa"];
+let arr_04 = ["Linux Mint", 19.1, "Tessa"];
 const out4 = document.querySelector('.out-4');
 
 const t04 = () => out4.textContent = arr_04.length;
@@ -37,7 +37,7 @@ document.querySelector('.b-4').addEventListener('click', t04);
 // Task 05
 // Создан массив arr_05. Напишите функцию t05. Функция принимает массив, как аргумент и возвращает его длину. 
 
-const arr_05 = ["elementary", "OS", 5.0, "Hera"];
+let arr_05 = ["elementary", "OS", 5.0, "Hera"];
 
 const t05 = arr => arr.length;
 
