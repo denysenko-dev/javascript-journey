@@ -249,7 +249,7 @@ const t11 = () => {
 
     for (let i = 0; i < 4; i++) {
         for (let k = 0; k < 4; k++) {
-            cycleString += counterStars < k ? ` ` : `*`;
+            cycleString += counterStars < k ? `` : `*`;
         }
         counterStars++;
         cycleString += `<br>`;
@@ -345,7 +345,7 @@ const t15 = () => {
 
     for (let i = 0; i < 4; i++) {
         for (let k = 1; k < 5; k++) {
-            cycleString += numbersCounter < k ? ` ` : `${k}_`;
+            cycleString += numbersCounter < k ? `` : `${k}_`;
         }
         numbersCounter++;
         cycleString += `<br>`;
@@ -369,7 +369,7 @@ const t16 = () => {
 
     for (let i = 1; i < 5; i++) {
         for (let k = 1; k < 5; k++) {
-            cycleString += numbersCounter < k ? ` ` : `${i}_`;
+            cycleString += numbersCounter < k ? `` : `${i}_`;
         }
         numbersCounter++;
         cycleString += `<br>`;
@@ -393,7 +393,7 @@ const t17 = () => {
 
     for (let i = 1; i < 5; i++) {
         for (let k = 1; k < 5; k++) {
-            cycleString += numbersCounter > k ? `${k}_` : ` `;
+            cycleString += numbersCounter > k ? `${k}_` : ``;
         }
         numbersCounter--;
         cycleString += `<br>`;
