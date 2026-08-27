@@ -86,7 +86,12 @@ document.querySelector('.b-7').addEventListener('click', () => console.log(t07([
 //  Напишите функцию, которая сравнивает два массива и если у них одинаковая длина, и значения одинаковы (строгое сравнение) возвращает true. Если нет - false.
 
 
-const t08 = (a, b) => [...a].sort().join() === [...b].sort().join();
+const t08 = (a, b) => {
+    let sortedA = [...a].sort();
+    let sortedB = [...b].sort();
+
+    return a.length === b.length && sortedA.every((item, index) => item === sortedB[index]);
+}
 
 document.querySelector('.b-8').addEventListener('click', () => console.log(t08([1, 3], [3, 1])));
 
