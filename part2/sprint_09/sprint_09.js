@@ -4,8 +4,7 @@
 // Task 01
 // По нажатию кнопки запускается функция, которая создает пустой Map и возвращает его.
 
-const t01 = () => {
-}
+const t01 = () => new Map();
 
 document.querySelector('.b-1').addEventListener('click', () => {
     console.log(t01());
@@ -15,10 +14,15 @@ document.querySelector('.b-1').addEventListener('click', () => {
 // Task 02
 // По нажатию кнопки запускается функция, которая получает ключ из input.i-21 и значение из input.i-22 и добавляет его в m2. Выводит map в консоль.
 
+const i21 = document.querySelector('.i-21');
+const i22 = document.querySelector('.i-22');
+
 let m2 = new Map();
 
 const t02 = () => {
-}
+    m2.set(i21.value, i22.value);
+    console.log(m2);
+};
 
 document.querySelector('.b-2').addEventListener('click', t02);
 
@@ -26,10 +30,12 @@ document.querySelector('.b-2').addEventListener('click', t02);
 // Task 03
 // По нажатию кнопки запускается функция, которая получает ключ из input.i-3 и проверяет его наличие в m3. Результат проверки выводится .out-3. Обратите внимание на то, как можно заполнить Map с помощью массива.
 
+const out3 = document.querySelector('.out-3');
+const i3 = document.querySelector('.i-3');
+
 let m3 = new Map([['one', 1], ['two', 2], ['three', 3], ['four', 4]]);
 
-const t03 = () => {
-}
+const t03 = () => out3.textContent = m3.has(i3.value);
 
 document.querySelector('.b-3').addEventListener('click', t03);
 
@@ -37,10 +43,14 @@ document.querySelector('.b-3').addEventListener('click', t03);
 // Task 04
 // По нажатию кнопки запускается функция, которая получает ключ из input.i-4 и удаляет запись с таким ключом в m4. Функция должна выводить m4 в консоль.
 
+const i4 = document.querySelector('.i-4');
+
 let m4 = new Map([['one', 1], ['two', 2], ['three', 3], ['four', 4]]);
 
 const t04 = () => {
-}
+    m4.delete(i4.value);
+    console.log(m4);
+};
 
 document.querySelector('.b-4').addEventListener('click', t04);
 
@@ -50,7 +60,9 @@ document.querySelector('.b-4').addEventListener('click', t04);
 
 
 const t05 = () => {
-}
+    m4.clear();
+    console.log(m4);
+};
 
 document.querySelector('.b-5').addEventListener('click', t05);
 
@@ -61,7 +73,14 @@ document.querySelector('.b-5').addEventListener('click', t05);
 let m6 = new Map();
 
 const t06 = () => {
-}
+    const key = document.querySelector('.s61').value;
+    const type = document.querySelector('.s62').value;
+    const value = document.querySelector('.s63').value;
+
+    m6.set(type === 'string' ? String(key) : Number(key), value);
+
+    console.log(m6);
+};
 
 document.querySelector('.b-6').addEventListener('click', t06);
 
@@ -72,7 +91,14 @@ document.querySelector('.b-6').addEventListener('click', t06);
 let m7 = new Map();
 
 const t07 = () => {
-}
+    const key = document.querySelector('.s71').value;
+    const register = document.querySelector('.s72').value;
+    const value = document.querySelector('.s73').value;
+
+    m7.set(register === 'uc' ? key.toUpperCase() : key.toLowerCase(), value);
+
+    console.log(m7);
+};
 
 document.querySelector('.b-7').addEventListener('click', t07);
 
@@ -80,10 +106,11 @@ document.querySelector('.b-7').addEventListener('click', t07);
 // Task 08
 // Сознан Map m8. Напишите функцию, которая выводит ключи из m8 в .out-8 через пробел.
 
+const out8 = document.querySelector('.out-8');
+
 let m8 = new Map([['k1', 22], ['k2', 33]]);
 
-const t08 = () => {
-}
+const t08 = () => out8.textContent = [...m8.keys()].join(' ');
 
 document.querySelector('.b-8').addEventListener('click', t08);
 
@@ -91,10 +118,11 @@ document.querySelector('.b-8').addEventListener('click', t08);
 // Task 09
 // Сознан Map m9. Напишите функцию, которая выводит значения из m9 в .out-9 через пробел.
 
+const out9 = document.querySelector('.out-9');
+
 let m9 = new Map([['k1', 22], ['k2', 33]]);
 
-const t09 = () => {
-}
+const t09 = () => out9.textContent = [...m9.values()].join(' ');
 
 document.querySelector('.b-9').addEventListener('click', t09);
 
@@ -106,7 +134,7 @@ let obj10 = {
     'Robocop': 1987,
     'Predator': 1987,
     9: 2000
-}
+};
 
 let m10 = new Map([['Robocop', 1987], ['Predator', 1987], [9, 2000]]);
 
@@ -119,7 +147,7 @@ const t10 = () => {
     console.log('Map:');
     console.log(m10);
     for (let k of m10.keys()) console.log(k);
-}
+};
 
 document.querySelector('.b-10').addEventListener('click', t10);
 
